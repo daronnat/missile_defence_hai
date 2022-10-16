@@ -1,0 +1,775 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scripts/tutorial.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/pixel_art_turret.png" type="Texture" id=3]
+[ext_resource path="res://assets/d_pad.png" type="Texture" id=4]
+[ext_resource path="res://assets/analog_stick.png" type="Texture" id=5]
+[ext_resource path="res://assets/crosshair_user.svg" type="Texture" id=6]
+[ext_resource path="res://assets/a_button.png" type="Texture" id=7]
+[ext_resource path="res://assets/energy_bullet.png" type="Texture" id=8]
+[ext_resource path="res://assets/simple_blue_circle.svg" type="Texture" id=9]
+[ext_resource path="res://assets/enemy_missile.svg" type="Texture" id=10]
+[ext_resource path="res://assets/blue_explosion.png" type="Texture" id=11]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=12]
+[ext_resource path="res://assets/robot_icon_pixelart.png" type="Texture" id=13]
+[ext_resource path="res://assets/agent_panel.png" type="Texture" id=14]
+[ext_resource path="res://assets/crosshair_agent.svg" type="Texture" id=15]
+[ext_resource path="res://assets/keyboard_keys.png" type="Texture" id=20]
+[ext_resource path="res://assets/tutorial_threat_missile.png" type="Texture" id=21]
+[ext_resource path="res://assets/tutorial_threat_missile2.png" type="Texture" id=22]
+[ext_resource path="res://assets/tutorial_new_agent_panel.png" type="Texture" id=23]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Panel" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 55.4983
+margin_top = 39.5016
+margin_right = 1826.5
+margin_bottom = 489.502
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="previous" type="Button" parent="."]
+margin_left = 111.486
+margin_top = 388.812
+margin_right = 903.486
+margin_bottom = 533.812
+rect_scale = Vector2( 0.3, 0.3 )
+focus_neighbour_right = NodePath("../next")
+theme = ExtResource( 12 )
+text = "PREVIOUS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="."]
+margin_left = 1351.49
+margin_top = 380.812
+margin_right = 2143.49
+margin_bottom = 525.812
+rect_scale = Vector2( 0.3, 0.3 )
+focus_neighbour_right = NodePath("../next")
+theme = ExtResource( 12 )
+text = "NEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="intro" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="intro"]
+margin_left = 569.043
+margin_top = 10.8253
+margin_right = 1486.04
+margin_bottom = 107.825
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Welcome to City Defense!"
+
+[node name="label2" type="Label" parent="intro"]
+margin_left = 232.259
+margin_top = 67.8615
+margin_right = 2373.26
+margin_bottom = 364.862
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Your goal is to protect cities by destroying dangerous missiles.
+You'll take control of the tower gun below:"
+align = 1
+
+[node name="tower" type="Sprite" parent="intro"]
+position = Vector2( 850.171, 312.193 )
+rotation = 3.42783
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="movement" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="movement"]
+margin_left = 51.2333
+margin_top = 27.0779
+margin_right = 908.233
+margin_bottom = 124.078
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Move the crosshair with:"
+
+[node name="label2" type="Label" parent="movement"]
+visible = false
+margin_left = 766.501
+margin_top = 22.4979
+margin_right = 842.501
+margin_bottom = 119.498
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "or"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="movement"]
+margin_left = 48.0001
+margin_top = 248.07
+margin_right = 2258.0
+margin_bottom = 443.07
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When you do, the crosshair turns yellow:"
+
+[node name="label4" type="Label" parent="movement"]
+margin_left = 696.113
+margin_top = 373.646
+margin_right = 1364.11
+margin_bottom = 470.646
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "go ahead and try it!"
+
+[node name="d_pad" type="Sprite" parent="movement"]
+visible = false
+position = Vector2( 992.812, 100.973 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="directional" type="Sprite" parent="movement"]
+position = Vector2( 914.094, 99.4477 )
+scale = Vector2( 1.41766, 1.41766 )
+texture = ExtResource( 20 )
+region_enabled = true
+region_rect = Rect2( 139.558, 431.7, 442.298, 116.589 )
+
+[node name="stick" type="Sprite" parent="movement"]
+visible = false
+position = Vector2( 655.669, 76.6562 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="yellow_crosshair" type="Sprite" parent="movement"]
+position = Vector2( 965.82, 282.723 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="firing" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="firing"]
+margin_left = 32.3639
+margin_top = 33.8762
+margin_right = 889.364
+margin_bottom = 130.876
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fire a projectile with:"
+
+[node name="label2" type="Label" parent="firing"]
+margin_left = 32.576
+margin_top = 156.997
+margin_right = 1438.57
+margin_bottom = 253.997
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When you do, a projectile is shot:"
+
+[node name="label3" type="Label" parent="firing"]
+margin_left = 19.4491
+margin_top = 280.0
+margin_right = 2797.45
+margin_bottom = 477.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The projectile will detonate upon reaching the location where you were aiming:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Sprite" parent="firing"]
+position = Vector2( 617.29, 67.6472 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 20 )
+region_enabled = true
+region_rect = Rect2( 1009.35, 1071.95, 129.543, 92.5308 )
+
+[node name="space_label" type="Label" parent="firing/space"]
+margin_left = 59.0103
+margin_top = -9.5759
+margin_right = 306.01
+margin_bottom = 87.4241
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "(space)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a_button" type="Sprite" parent="firing"]
+visible = false
+position = Vector2( 537.224, 71.3593 )
+scale = Vector2( 0.417673, 0.417673 )
+texture = ExtResource( 7 )
+
+[node name="yellow_crosshair" type="Sprite" parent="firing"]
+modulate = Color( 0.560784, 0.968627, 1, 1 )
+position = Vector2( 761.517, 193.107 )
+scale = Vector2( 0.670675, 0.622959 )
+texture = ExtResource( 8 )
+
+[node name="blue_explosion" type="Sprite" parent="firing"]
+self_modulate = Color( 0, 0.764706, 1, 1 )
+position = Vector2( 1711.42, 315.831 )
+scale = Vector2( 0.114792, 0.114792 )
+texture = ExtResource( 9 )
+
+[node name="hit" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="hit"]
+margin_left = 25.0
+margin_top = 29.0
+margin_right = 2014.0
+margin_bottom = 226.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Missiles will come from the top of the screen:"
+
+[node name="label2" type="Label" parent="hit"]
+margin_left = 25.0
+margin_top = 183.0
+margin_right = 2839.0
+margin_bottom = 297.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "They can only be destroyed when entering in contact with a projectile's explosion:"
+
+[node name="label3" type="Label" parent="hit"]
+margin_left = 517.468
+margin_top = 236.344
+margin_right = 563.468
+margin_bottom = 333.344
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "+"
+
+[node name="label4" type="Label" parent="hit"]
+margin_left = 835.156
+margin_top = 234.396
+margin_right = 881.156
+margin_bottom = 331.396
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "="
+
+[node name="missile" type="Sprite" parent="hit"]
+position = Vector2( 1000.83, 74.6221 )
+rotation = -3.0456
+scale = Vector2( 0.0648626, 0.0648626 )
+texture = ExtResource( 10 )
+
+[node name="missile2" type="Sprite" parent="hit"]
+position = Vector2( 431.844, 360.819 )
+rotation = -3.0456
+scale = Vector2( 0.0694504, 0.0694504 )
+texture = ExtResource( 10 )
+
+[node name="blue_explosion" type="Sprite" parent="hit"]
+self_modulate = Color( 0, 0.764706, 1, 1 )
+position = Vector2( 723.321, 365.993 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="missile_explosion" type="Sprite" parent="hit"]
+self_modulate = Color( 0, 0.764706, 1, 1 )
+position = Vector2( 1057.65, 345.181 )
+scale = Vector2( 0.305842, 0.309738 )
+texture = ExtResource( 11 )
+
+[node name="missile3" type="Sprite" parent="hit"]
+self_modulate = Color( 1, 1, 1, 0.376471 )
+position = Vector2( 1057.83, 343.653 )
+rotation = -3.0456
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 10 )
+
+[node name="missile_types" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="missile_types"]
+margin_left = 63.4388
+margin_top = 0.683716
+margin_right = 2173.44
+margin_bottom = 562.684
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Some missiles are dangerous: they are going to crash into a city.
+
+Some others are non-threatening, and you don't have to fire at them."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="missile_types"]
+position = Vector2( 1544.94, 99.2233 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 21 )
+
+[node name="Sprite2" type="Sprite" parent="missile_types"]
+position = Vector2( 1544.14, 286.553 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 200, 100 )
+
+[node name="solo_training" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="solo_training"]
+margin_left = 127.389
+margin_top = 37.1039
+margin_right = 2669.39
+margin_bottom = 151.104
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When you're ready, press the button below and try to practice your aim!"
+
+[node name="solo_training" type="Button" parent="solo_training"]
+margin_left = 539.176
+margin_top = 175.659
+margin_right = 1925.18
+margin_bottom = 320.659
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 12 )
+text = "Practice round"
+
+[node name="a_to_continue" type="Label" parent="solo_training/solo_training"]
+visible = false
+margin_left = 145.477
+margin_top = 151.939
+margin_right = 897.477
+margin_bottom = 248.939
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press           to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a_button" type="Sprite" parent="solo_training/solo_training/a_to_continue"]
+position = Vector2( 273.339, 55.6729 )
+scale = Vector2( 0.42956, 0.429561 )
+texture = ExtResource( 7 )
+
+[node name="try_again_solo_training" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="try_again_solo_training"]
+margin_left = 121.0
+margin_top = 47.0
+margin_right = 2711.0
+margin_bottom = 161.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Do you want to try the solo training once more or move on to the next part?"
+
+[node name="try_again_solo" type="Button" parent="try_again_solo_training"]
+margin_left = 521.176
+margin_top = 171.659
+margin_right = 1907.18
+margin_bottom = 316.659
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 12 )
+text = "TRY AGAIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_intro" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="agent_intro"]
+margin_left = 383.525
+margin_top = 51.9992
+margin_right = 1926.52
+margin_bottom = 348.999
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "An agent will now join in!
+Check the bottom right corner of the screen once you reach the next slide!"
+align = 1
+autowrap = true
+
+[node name="label2" type="Label" parent="agent_intro"]
+visible = false
+margin_left = 330.525
+margin_top = 212.366
+margin_right = 1794.53
+margin_bottom = 409.366
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When an agent plays with you, a second panel appears in the bottom right corner:"
+autowrap = true
+
+[node name="agent" type="Sprite" parent="agent_intro"]
+position = Vector2( 849.019, 323.805 )
+scale = Vector2( 0.359609, 0.359609 )
+texture = ExtResource( 13 )
+
+[node name="missile2" type="Sprite" parent="agent_intro"]
+visible = false
+position = Vector2( 866.232, 468.463 )
+scale = Vector2( 0.78228, 0.78228 )
+texture = ExtResource( 14 )
+
+[node name="agent_visual" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="agent_visual"]
+margin_left = 127.875
+margin_top = 15.8271
+margin_right = 2669.88
+margin_bottom = 412.827
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The agent can help you aim at targets AND/OR display visual information to help you make decisions.
+You can know which features the agent has activated by looking at the agent panel:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="agent_visual"]
+position = Vector2( 912.788, 352.728 )
+scale = Vector2( 1.36934, 1.36934 )
+texture = ExtResource( 23 )
+
+[node name="arrow_line2d" type="Line2D" parent="agent_visual"]
+position = Vector2( 774.261, 459.776 )
+rotation = -2.58849
+points = PoolVector2Array( 2.927, 14.7749, 39.824, 73.0546, 35.4233, 36.2838, 7.4873, 53.9233, 39.7837, 73.2025 )
+width = 15.0
+default_color = Color( 0.537255, 0.0745098, 0, 1 )
+end_cap_mode = 2
+
+[node name="arrow_line2d2" type="Line2D" parent="agent_visual"]
+position = Vector2( 1078.51, 242.759 )
+rotation = -5.38106
+points = PoolVector2Array( 2.927, 14.7749, 39.824, 73.0546, 35.4233, 36.2838, 7.4873, 53.9233, 39.7837, 73.2025 )
+width = 15.0
+default_color = Color( 0.537255, 0.0745098, 0, 1 )
+end_cap_mode = 2
+
+[node name="agent_movement" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="agent_movement"]
+margin_left = 74.6991
+margin_top = 135.811
+margin_right = 2856.7
+margin_bottom = 275.811
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "then, the  agent is able to move the crosshair, which will turn the crosshair icon white:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="agent_movement"]
+margin_left = 75.0508
+margin_top = 28.0
+margin_right = 1461.05
+margin_bottom = 148.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "If the agent's \"aiming help\" is activated:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="agent_movement"]
+margin_left = 63.5525
+margin_top = 293.475
+margin_right = 2633.55
+margin_bottom = 431.475
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Now, move the crosshair to a corner of the screen and see what happens!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="white_crosshair" type="Sprite" parent="agent_movement"]
+position = Vector2( 899.316, 236.761 )
+scale = Vector2( 0.169346, 0.169346 )
+texture = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="agent_movement"]
+position = Vector2( 1256.44, 71.6922 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 23 )
+
+[node name="Line2D" type="Line2D" parent="agent_movement/Sprite"]
+position = Vector2( 0.840942, 0 )
+points = PoolVector2Array( 2.87048, -49.3669, -68.6802, -9.73143, -42.2517, -45.5986, -68.6802, -9.73143, -24.049, -12.865 )
+width = 15.0
+default_color = Color( 0.709804, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="agent_takeover" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="agent_takeover"]
+margin_left = 141.089
+margin_top = 38.4801
+margin_right = 2683.09
+margin_bottom = 157.48
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "If you don't like where the agent is going, you can correct the agent with:"
+autowrap = true
+
+[node name="directional" type="Sprite" parent="agent_takeover"]
+position = Vector2( 887.593, 186.899 )
+scale = Vector2( 1.41766, 1.41766 )
+texture = ExtResource( 20 )
+region_enabled = true
+region_rect = Rect2( 139.558, 431.7, 442.298, 116.589 )
+
+[node name="agent_warning" type="Control" parent="."]
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="agent_warning"]
+margin_left = 102.003
+margin_top = 59.0
+margin_right = 2761.0
+margin_bottom = 456.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Please be aware that the agent is not good enough.
+
+There will be times where its inputs will be inaccurate, and it's up to you to correct it."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_training" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+
+[node name="label1" type="Label" parent="agent_training"]
+margin_left = 423.448
+margin_top = 34.7401
+margin_right = 1868.45
+margin_bottom = 231.74
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Now, let's practice with an agent!
+"
+align = 1
+autowrap = true
+
+[node name="agent_training" type="Button" parent="agent_training"]
+margin_left = 498.268
+margin_top = 200.983
+margin_right = 1884.27
+margin_bottom = 345.983
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 12 )
+text = "Practice round"
+
+[node name="try_again_agent_training" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="try_again_agent_training"]
+margin_left = 121.0
+margin_top = 47.0
+margin_right = 2711.0
+margin_bottom = 161.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Do you want to try the agent training once more or move on to the next part?"
+
+[node name="try_again_agent" type="Button" parent="try_again_agent_training"]
+margin_left = 521.176
+margin_top = 171.659
+margin_right = 1907.18
+margin_bottom = 316.659
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 12 )
+text = "TRY AGAIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end_tutorial" type="Control" parent="."]
+visible = false
+margin_left = 1.36041
+margin_top = 4.08113
+margin_right = 41.3604
+margin_bottom = 44.0811
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label1" type="Label" parent="end_tutorial"]
+margin_left = 97.0
+margin_top = 61.0
+margin_right = 2742.0
+margin_bottom = 258.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You have reached the end of the tutorial, you can now click on the button below to proceed to the main study."
+autowrap = true
+
+[node name="end_button" type="Button" parent="end_tutorial"]
+margin_left = 515.176
+margin_top = 257.659
+margin_right = 1901.18
+margin_bottom = 402.659
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 12 )
+text = "END TUTORIAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ctrl_label" type="Label" parent="."]
+visible = false
+margin_left = 297.278
+margin_top = 519.522
+margin_right = 2323.28
+margin_bottom = 616.522
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Use the LR/RB triggers or the mouse to navigate the slides"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="solo_training/solo_training" to="." method="_on_solo_training_pressed"]
+[connection signal="pressed" from="try_again_solo_training/try_again_solo" to="." method="_on_try_again_solo_pressed"]
+[connection signal="pressed" from="agent_training/agent_training" to="." method="_on_agent_training_pressed"]
+[connection signal="pressed" from="try_again_agent_training/try_again_agent" to="." method="_on_try_again_agent_pressed"]
+[connection signal="pressed" from="end_tutorial/end_button" to="." method="_on_end_button_pressed"]

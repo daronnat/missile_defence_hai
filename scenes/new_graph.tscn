@@ -1,0 +1,217 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/new_graph.gd" type="Script" id=1]
+[ext_resource path="res://assets/White_Arrow_Down.svg.png" type="Texture" id=2]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/v_mark.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/x_cross.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.94902, 0.94902, 0.94902, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.92549, 0.92549, 0.92549, 1 )
+
+[node name="new_graph" type="Node2D"]
+position = Vector2( 818.419, 733.932 )
+scale = Vector2( 0.45, 0.45 )
+z_index = 150
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -230.0
+margin_top = 476.0
+margin_right = 705.0
+margin_bottom = 762.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="Panel"]
+visible = false
+margin_left = 23.3867
+margin_top = 2.69763
+margin_right = 1152.39
+margin_bottom = 199.698
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/font = ExtResource( 3 )
+text = "PERFORMANCE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accuracy_label" type="Label" parent="Panel"]
+margin_left = -33.7618
+margin_top = -18.9048
+margin_right = 419.238
+margin_bottom = 178.095
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 264.193, 48.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "THREAT HIT
+ACCURACY:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accuracy" type="Label" parent="Panel"]
+margin_left = 167.989
+margin_top = 163.413
+margin_right = 370.989
+margin_bottom = 260.413
+rect_pivot_offset = Vector2( 264.193, 48.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.776471, 0.776471, 0.776471, 1 )
+custom_constants/shadow_offset_x = 3
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_up" type="Sprite" parent="Panel"]
+self_modulate = Color( 0.145098, 0.592157, 0, 1 )
+position = Vector2( 97.9619, 211.35 )
+rotation = 3.14159
+scale = Vector2( 0.16182, 0.16182 )
+texture = ExtResource( 2 )
+
+[node name="arrow_down" type="Sprite" parent="Panel"]
+self_modulate = Color( 0.52549, 0, 0, 1 )
+position = Vector2( 97.9629, 220.789 )
+scale = Vector2( 0.16182, 0.16182 )
+texture = ExtResource( 2 )
+
+[node name="no_change" type="Line2D" parent="Panel"]
+position = Vector2( 31.085, -9.64716 )
+points = PoolVector2Array( 30.4602, 225.397, 101.936, 225.397 )
+width = 20.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1
+antialiased = true
+
+[node name="separation_line" type="Line2D" parent="Panel"]
+position = Vector2( 340.536, -99.3421 )
+scale = Vector2( 1, 1.10428 )
+points = PoolVector2Array( 59.0507, 108.513, 59.1169, 332.595 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="last_shots" type="Node2D" parent="Panel"]
+position = Vector2( 300, 100 )
+
+[node name="line" type="Line2D" parent="Panel/last_shots"]
+visible = false
+position = Vector2( -188, -82.7692 )
+points = PoolVector2Array( 281.355, 223.671, 249.661, 223.666 )
+width = 8.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="line2" type="Line2D" parent="Panel/last_shots"]
+visible = false
+position = Vector2( -91.9089, -82.7692 )
+points = PoolVector2Array( 281.08, 223.671, 249.661, 223.666 )
+width = 8.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="shot1" type="Position2D" parent="Panel/last_shots"]
+position = Vector2( 200, 110.023 )
+
+[node name="v_mark" parent="Panel/last_shots/shot1" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( -28.964, -283.039 )
+
+[node name="x_cross" parent="Panel/last_shots/shot1" instance=ExtResource( 5 )]
+visible = false
+
+[node name="shot2" type="Position2D" parent="Panel/last_shots"]
+position = Vector2( 345, 109.671 )
+
+[node name="v_mark" parent="Panel/last_shots/shot2" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( -23.4036, -283.039 )
+
+[node name="x_cross" parent="Panel/last_shots/shot2" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 0.560791, 1.10156 )
+
+[node name="shot3" type="Position2D" parent="Panel/last_shots"]
+position = Vector2( 500, 108.789 )
+
+[node name="v_mark" parent="Panel/last_shots/shot3" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( -24.1903, -284.03 )
+
+[node name="x_cross" parent="Panel/last_shots/shot3" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -0.22583, 0.110718 )
+
+[node name="last_shots_label" type="Label" parent="Panel/last_shots"]
+margin_left = 115.377
+margin_top = -99.1602
+margin_right = 598.377
+margin_bottom = -2.16016
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 264.193, 48.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "LAST SHOTS:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wait_panel" type="Panel" parent="Panel"]
+margin_left = 1.0
+margin_top = 139.0
+margin_right = 397.0
+margin_bottom = 284.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/wait_panel"]
+margin_left = 59.1055
+margin_top = -5.12622
+margin_right = 637.105
+margin_bottom = 291.874
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.470588, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Computing...
+More data
+required"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="update" type="Timer" parent="."]
+[connection signal="timeout" from="update" to="." method="_on_update_timeout"]

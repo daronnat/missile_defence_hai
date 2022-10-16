@@ -1,0 +1,232 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/benchmark.gd" type="Script" id=2]
+[ext_resource path="res://scenes/city.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/noise_enhanced.tscn" type="PackedScene" id=4]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "blink"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="city" parent="." instance=ExtResource( 3 )]
+position = Vector2( 338.889, 1001.76 )
+
+[node name="city2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 738.889, 1001.76 )
+
+[node name="city3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1138.89, 1001.76 )
+
+[node name="city4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1538.89, 1001.76 )
+
+[node name="perf_label" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 24.8986
+margin_right = 505.0
+margin_bottom = 152.898
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 10
+text = "<PERF INFO>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer_label" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 146.873
+margin_right = 505.0
+margin_bottom = 274.873
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 10
+text = "<TIMER>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress" type="Label" parent="."]
+margin_left = 469.608
+margin_top = 14.5167
+margin_right = 2377.61
+margin_bottom = 211.517
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Checking if your computer can be used for our study...
+Please wait."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="progress"]
+anims/blink = SubResource( 1 )
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 961.09, 372.621 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="off_spawn" type="Position2D" parent="."]
+position = Vector2( 2083.08, 391.167 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="noise_wall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 489.486, 278.43 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="menu" type="Node2D" parent="."]
+z_index = 4096
+
+[node name="Panel" type="Panel" parent="menu"]
+margin_right = 1930.0
+margin_bottom = 1078.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="menu/Panel"]
+margin_left = 59.0955
+margin_top = 57.0
+margin_right = 2517.1
+margin_bottom = 754.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+text = "Before taking part in our experiment, you need to make sure that your computer is capable of running the study at a decent framerate.
+
+Please make sure that no other resources-hungry programs are running and click on the \"Benchmark\" button when you are ready.
+
+-> No information will be recorded by the end of this short test 
+(duration = 1 minute)."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menu/Panel"]
+margin_left = 661.661
+margin_top = 638.456
+margin_right = 1806.66
+margin_bottom = 901.456
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 5 )
+text = "BENCHMARK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="results" type="Node2D" parent="."]
+visible = false
+z_index = 4096
+
+[node name="Panel" type="Panel" parent="results"]
+margin_left = 448.178
+margin_top = 167.275
+margin_right = 1466.18
+margin_bottom = 781.275
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="results/Panel"]
+margin_left = 46.4333
+margin_top = 17.5167
+margin_right = 1284.43
+margin_bottom = 130.517
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+text = "RESULTS"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="Label" parent="results/Panel"]
+visible = false
+margin_left = 36.8667
+margin_top = 165.65
+margin_right = 1274.87
+margin_bottom = 690.65
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+text = "<results>"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pass" type="Label" parent="results/Panel"]
+visible = false
+margin_left = 36.8667
+margin_top = 165.65
+margin_right = 1274.87
+margin_bottom = 690.65
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.384314, 0.72549, 0, 1 )
+text = "Congratulations!
+You passed the benchmarking test, you may participate in our study using your computer."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fail" type="Label" parent="results/Panel"]
+visible = false
+margin_left = 36.8667
+margin_top = 165.65
+margin_right = 1274.87
+margin_bottom = 690.65
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.686275, 0, 0, 1 )
+text = "Sorry,
+Your computer won't be able to properly run this study, please do not proceed further."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="duration_timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+[connection signal="pressed" from="menu/Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="duration_timer" to="." method="_on_duration_timer_timeout"]

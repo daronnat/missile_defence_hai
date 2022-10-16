@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/chatbox.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.898039, 0.898039, 0.898039, 0.784314 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.898039, 0.898039, 0.898039, 0.784314 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="chatbox" type="Popup"]
+visible = true
+anchor_left = 0.663
+anchor_top = 0.576
+anchor_right = 0.663
+anchor_bottom = 0.576
+margin_left = -246.955
+margin_top = -151.839
+margin_right = -246.955
+margin_bottom = -151.839
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupPanel" type="Panel" parent="."]
+margin_left = -341.086
+margin_top = -108.715
+margin_right = 163.914
+margin_bottom = 53.285
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PopupPanel"]
+margin_left = 18.0
+margin_top = 13.0
+margin_right = 1181.0
+margin_bottom = 355.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TEST TEST TEST TEST !!!"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PopupPanel"]
+margin_left = 540.219
+margin_top = 205.637
+margin_right = 574.219
+margin_bottom = 236.637
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="PopupPanel"]
+margin_left = 499.397
+margin_top = 166.38
+margin_right = 540.397
+margin_bottom = 204.38
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display" type="Tween" parent="."]
+
+[node name="delete" type="Tween" parent="."]
+[connection signal="tween_completed" from="display" to="." method="_on_display_tween_completed"]
+[connection signal="tween_completed" from="delete" to="." method="_on_delete_tween_completed"]

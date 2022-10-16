@@ -1,0 +1,1831 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/questionnaire.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/controller_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/grabber_selected.svg" type="Texture" id=5]
+[ext_resource path="res://assets/grabber_neutral.svg" type="Texture" id=6]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxLine" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 5
+
+[node name="questionnaire" type="Node2D"]
+scale = Vector2( 1.5, 1.3 )
+script = ExtResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+margin_left = 37.0
+margin_top = 146.0
+margin_right = 1242.0
+margin_bottom = 806.0
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer"]
+margin_right = 1205.0
+margin_bottom = 660.0
+rect_clip_content = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 0.694118, 0.694118, 0.694118, 1 )
+margin_left = 37.0
+margin_top = 11.6154
+margin_right = 1242.0
+margin_bottom = 145.615
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="Panel"]
+visible = false
+margin_left = 120.544
+margin_top = 4.80968
+margin_right = 776.544
+margin_bottom = 104.81
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.584314, 0, 1 )
+text = "End of the session"
+
+[node name="info" type="Label" parent="Panel"]
+margin_left = 27.0
+margin_top = 33.8706
+margin_right = 1602.0
+margin_bottom = 133.871
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Please complete this questionnaire:"
+align = 3
+
+[node name="Label" type="Label" parent="Panel"]
+visible = false
+margin_left = 948.083
+margin_top = 19.2454
+margin_right = 1613.09
+margin_bottom = 416.246
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.870588, 0, 1 )
+text = "To complete this questionnaire,
+please use the mouse"
+valign = 1
+autowrap = true
+
+[node name="controller_icon" type="Sprite" parent="Panel"]
+visible = false
+position = Vector2( 1162.46, 93.5927 )
+scale = Vector2( 0.146016, 0.162936 )
+texture = ExtResource( 4 )
+
+[node name="tlx" type="Panel" parent="."]
+visible = false
+margin_left = 37.0
+margin_top = 146.0
+margin_right = 1242.0
+margin_bottom = 784.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="question_block1" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 7.15387
+margin_right = 1109.0
+margin_bottom = 78.1539
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block1"]
+margin_left = 127.0
+margin_top = 45.923
+margin_right = 896.0
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_bottom = NodePath("../../question_block2/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block1"]
+margin_left = 15.1815
+margin_top = 54.7241
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very Low"
+
+[node name="category" type="Label" parent="tlx/question_block1"]
+margin_left = 7.78192
+margin_top = 5.92816
+margin_right = 582.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Mental Demand"
+
+[node name="label_end" type="Label" parent="tlx/question_block1"]
+margin_left = 927.101
+margin_top = 58.45
+margin_right = 1276.11
+margin_bottom = 155.45
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very High"
+
+[node name="question" type="Label" parent="tlx/question_block1"]
+margin_left = 345.0
+margin_top = 3.46155
+margin_right = 2814.0
+margin_bottom = 100.462
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How mentally demanding was the task?"
+valign = 1
+
+[node name="question_block2" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 104.846
+margin_right = 1109.0
+margin_bottom = 175.846
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block2"]
+margin_left = 127.0
+margin_top = 45.923
+margin_right = 896.0
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block1/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block3/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block2"]
+margin_left = 15.1815
+margin_top = 54.724
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very Low"
+
+[node name="category" type="Label" parent="tlx/question_block2"]
+margin_left = 7.78192
+margin_top = 5.92847
+margin_right = 607.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Physical Demand"
+
+[node name="label_end" type="Label" parent="tlx/question_block2"]
+margin_left = 927.101
+margin_top = 58.45
+margin_right = 1276.11
+margin_bottom = 155.45
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very High"
+
+[node name="question" type="Label" parent="tlx/question_block2"]
+margin_left = 342.667
+margin_top = 0.923096
+margin_right = 2798.67
+margin_bottom = 97.9231
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How physically demanding was the task?"
+valign = 1
+
+[node name="question_block3" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 201.0
+margin_right = 1109.0
+margin_bottom = 272.0
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block3"]
+margin_left = 127.0
+margin_top = 45.923
+margin_right = 896.0
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block2/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block4/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block3"]
+margin_left = 15.1815
+margin_top = 54.724
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very Low"
+
+[node name="category" type="Label" parent="tlx/question_block3"]
+margin_left = 7.78192
+margin_top = 5.92828
+margin_right = 656.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Temporal Demand"
+
+[node name="label_end" type="Label" parent="tlx/question_block3"]
+margin_left = 927.101
+margin_top = 58.45
+margin_right = 1276.11
+margin_bottom = 155.45
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very High"
+
+[node name="question" type="Label" parent="tlx/question_block3"]
+margin_left = 340.667
+margin_top = -1.23096
+margin_right = 2832.67
+margin_bottom = 95.769
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How hurried or rushed was the pace of the task?"
+valign = 1
+
+[node name="question_block4" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 305.616
+margin_right = 1109.0
+margin_bottom = 376.616
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block4"]
+margin_left = 127.0
+margin_top = 45.923
+margin_right = 896.0
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block3/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block5/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block4"]
+margin_left = 15.1815
+margin_top = 54.724
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Perfect"
+
+[node name="category" type="Label" parent="tlx/question_block4"]
+margin_left = 7.78192
+margin_top = 5.9281
+margin_right = 582.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Performance"
+
+[node name="label_end" type="Label" parent="tlx/question_block4"]
+margin_left = 928.434
+margin_top = 50.7581
+margin_right = 1277.44
+margin_bottom = 147.758
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Failure"
+
+[node name="question" type="Label" parent="tlx/question_block4"]
+margin_left = 342.0
+margin_top = -2.0
+margin_right = 2929.0
+margin_bottom = 95.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How successful were you in accomplishing your level of performance?"
+valign = 1
+autowrap = true
+
+[node name="question_block5" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 415.616
+margin_right = 1109.0
+margin_bottom = 486.616
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block5"]
+margin_left = 127.0
+margin_top = 45.923
+margin_right = 896.0
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block4/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block6/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block5"]
+margin_left = 15.1815
+margin_top = 54.7241
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very Low"
+
+[node name="category" type="Label" parent="tlx/question_block5"]
+margin_left = 7.78192
+margin_top = 5.92834
+margin_right = 582.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Effort"
+
+[node name="label_end" type="Label" parent="tlx/question_block5"]
+margin_left = 927.101
+margin_top = 58.45
+margin_right = 1276.11
+margin_bottom = 155.45
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very High"
+
+[node name="question" type="Label" parent="tlx/question_block5"]
+margin_left = 342.0
+margin_top = -2.0
+margin_right = 2932.0
+margin_bottom = 95.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How hard did you have to work to accomplish your level of performance?"
+valign = 1
+autowrap = true
+
+[node name="question_block6" type="Control" parent="tlx"]
+margin_left = 81.0
+margin_top = 525.615
+margin_right = 1109.0
+margin_bottom = 596.615
+
+[node name="HSlider" type="HSlider" parent="tlx/question_block6"]
+margin_left = 127.0
+margin_top = 45.9231
+margin_right = 896.0
+margin_bottom = 68.9231
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block5/HSlider")
+focus_neighbour_bottom = NodePath("../../submit")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 21.0
+value = 1.0
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+
+[node name="label_beg" type="Label" parent="tlx/question_block6"]
+margin_left = 15.1815
+margin_top = 54.7241
+margin_right = 345.182
+margin_bottom = 151.724
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very Low"
+
+[node name="category" type="Label" parent="tlx/question_block6"]
+margin_left = 7.78192
+margin_top = 5.92798
+margin_right = 582.782
+margin_bottom = 102.928
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Frustration"
+
+[node name="label_end" type="Label" parent="tlx/question_block6"]
+margin_left = 927.101
+margin_top = 58.45
+margin_right = 1276.11
+margin_bottom = 155.45
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Very High"
+
+[node name="question" type="Label" parent="tlx/question_block6"]
+margin_left = 341.0
+margin_top = -5.0
+margin_right = 2935.0
+margin_bottom = 92.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How insecure, discouraged, irritated, stressed and annoyed were you?"
+valign = 1
+autowrap = true
+
+[node name="submit" type="Button" parent="tlx"]
+margin_left = 554.295
+margin_top = 635.209
+margin_right = 882.295
+margin_bottom = 738.209
+rect_scale = Vector2( 0.3, 0.3 )
+focus_neighbour_top = NodePath("../question_block6/HSlider")
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 2 )
+text = "OK"
+
+[node name="trust_in_automation" type="Panel" parent="."]
+visible = false
+margin_left = 37.0
+margin_top = 146.0
+margin_right = 1242.0
+margin_bottom = 784.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="p_nb" type="Label" parent="trust_in_automation"]
+visible = false
+margin_left = 1023.68
+margin_top = 632.028
+margin_right = 1372.69
+margin_bottom = 729.028
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Page ? / ?"
+
+[node name="page1" type="Control" parent="trust_in_automation"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="question_block1" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 3.30771
+margin_right = 1109.0
+margin_bottom = 74.3078
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block1"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_bottom = NodePath("../../question_block2/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block1"]
+margin_left = 64.6321
+margin_top = 5.34766
+margin_right = 2620.63
+margin_bottom = 102.348
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system is deceptive"
+valign = 1
+
+[node name="question_block2" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 114.077
+margin_right = 1109.0
+margin_bottom = 185.077
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block2"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block1/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block3/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block2"]
+margin_left = 64.6321
+margin_top = 6.84613
+margin_right = 2620.63
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system, behaves in an underhanded manner"
+valign = 1
+
+[node name="question_block3" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 224.846
+margin_right = 1109.0
+margin_bottom = 295.846
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block3"]
+margin_left = 64.3333
+margin_top = 44.4246
+margin_right = 833.333
+margin_bottom = 67.4246
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block2/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block4/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block3"]
+margin_left = 63.3333
+margin_top = 6.84607
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I am suspicious of the system's intent, action, or outputs"
+valign = 1
+
+[node name="question_block4" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 337.154
+margin_right = 1109.0
+margin_bottom = 408.154
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block4"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block3/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block5/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block4"]
+margin_left = 63.3333
+margin_top = 6.84607
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I am warry of the system"
+valign = 1
+
+[node name="question_block5" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 444.077
+margin_right = 1109.0
+margin_bottom = 515.077
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block5"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block4/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block6/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block5"]
+margin_left = 63.3333
+margin_top = 6.84595
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system's actions will have a harmful or injurious outcome"
+valign = 1
+
+[node name="question_block6" type="Control" parent="trust_in_automation/page1"]
+margin_left = 81.0
+margin_top = 550.231
+margin_right = 1109.0
+margin_bottom = 621.231
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page1/question_block6"]
+margin_left = 65.632
+margin_top = 45.923
+margin_right = 834.632
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block5/HSlider")
+focus_neighbour_right = NodePath("../../../next")
+focus_neighbour_bottom = NodePath("../../../next")
+focus_next = NodePath("../../../next")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page1/question_block6"]
+margin_left = 63.3333
+margin_top = 6.84619
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I am confident in the system"
+valign = 1
+
+[node name="page2" type="Control" parent="trust_in_automation"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="question_block1" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 3.30771
+margin_right = 1109.0
+margin_bottom = 74.3078
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block1"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_bottom = NodePath("../../question_block2/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block1"]
+margin_left = 64.6321
+margin_top = 5.34766
+margin_right = 2620.63
+margin_bottom = 102.348
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system provides security"
+valign = 1
+
+[node name="question_block2" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 114.077
+margin_right = 1109.0
+margin_bottom = 185.077
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block2"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block1/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block3/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block2"]
+margin_left = 64.6321
+margin_top = 6.84613
+margin_right = 2620.63
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system has integrity"
+valign = 1
+
+[node name="question_block3" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 224.846
+margin_right = 1109.0
+margin_bottom = 295.846
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block3"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block2/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block4/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block3"]
+margin_left = 63.3333
+margin_top = 6.84607
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system is dependable"
+valign = 1
+
+[node name="question_block4" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 337.154
+margin_right = 1109.0
+margin_bottom = 408.154
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block4"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block3/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block5/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block4"]
+margin_left = 63.3333
+margin_top = 6.84607
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The system is reliable"
+valign = 1
+
+[node name="question_block5" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 444.077
+margin_right = 1109.0
+margin_bottom = 515.077
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block5"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block4/HSlider")
+focus_neighbour_bottom = NodePath("../../question_block6/HSlider")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block5"]
+margin_left = 63.3333
+margin_top = 6.84595
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I can trust the system"
+valign = 1
+
+[node name="question_block6" type="Control" parent="trust_in_automation/page2"]
+margin_left = 81.0
+margin_top = 550.231
+margin_right = 1109.0
+margin_bottom = 621.231
+
+[node name="HSlider" type="HSlider" parent="trust_in_automation/page2/question_block6"]
+margin_left = 64.3333
+margin_top = 45.923
+margin_right = 833.333
+margin_bottom = 68.923
+rect_scale = Vector2( 1, 1.5 )
+focus_neighbour_top = NodePath("../../question_block5/HSlider")
+focus_neighbour_right = NodePath("../../../submit")
+focus_neighbour_bottom = NodePath("../../../submit")
+focus_next = NodePath("../../../submit")
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 3 )
+min_value = 1.0
+max_value = 7.0
+value = 4.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="1" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 68.8298
+margin_top = 90.0
+margin_right = 114.83
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="2" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 193.439
+margin_top = 90.0
+margin_right = 239.439
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+
+[node name="3" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 317.942
+margin_top = 90.0
+margin_right = 363.942
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+
+[node name="4" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 441.645
+margin_top = 90.0
+margin_right = 487.645
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+
+[node name="5" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 567.925
+margin_top = 90.0
+margin_right = 613.925
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+
+[node name="6" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 691.685
+margin_top = 90.0
+margin_right = 737.685
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+
+[node name="7" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 817.128
+margin_top = 90.0
+margin_right = 863.128
+margin_bottom = 187.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+
+[node name="question" type="Label" parent="trust_in_automation/page2/question_block6"]
+margin_left = 63.3333
+margin_top = 6.84619
+margin_right = 2619.33
+margin_bottom = 103.846
+rect_scale = Vector2( 0.32, 0.32 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I am familiar with the system"
+valign = 1
+
+[node name="submit" type="Button" parent="trust_in_automation"]
+visible = false
+margin_left = 984.0
+margin_top = 559.0
+margin_right = 1537.0
+margin_bottom = 752.0
+rect_scale = Vector2( 0.3, 0.3 )
+focus_neighbour_left = NodePath("../page2/question_block6/HSlider")
+focus_neighbour_top = NodePath("../question_block6/HSlider")
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 2 )
+text = "OK"
+
+[node name="next" type="Button" parent="trust_in_automation"]
+margin_left = 985.441
+margin_top = 560.514
+margin_right = 1797.44
+margin_bottom = 835.514
+rect_scale = Vector2( 0.2, 0.2 )
+focus_neighbour_left = NodePath("../page2/question_block6/HSlider")
+theme = ExtResource( 7 )
+text = "NEXT"
+[connection signal="pressed" from="tlx/submit" to="." method="submit_questionnaire"]
+[connection signal="pressed" from="trust_in_automation/submit" to="." method="submit_questionnaire"]
+[connection signal="pressed" from="trust_in_automation/next" to="." method="_on_next_pressed"]

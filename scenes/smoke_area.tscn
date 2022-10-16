@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/smoke_particle.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+orbit_velocity = 1.0
+orbit_velocity_random = 0.0
+scale = 5.0
+
+[node name="smoke_area" type="Particles2D"]
+modulate = Color( 0.539062, 0.539062, 0.539062, 1 )
+position = Vector2( 611.958, 428.999 )
+scale = Vector2( 4, 4 )
+z_index = 1
+amount = 10
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )

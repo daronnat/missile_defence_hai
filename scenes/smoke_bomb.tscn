@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/smoke_bomb.gd" type="Script" id=1]
+[ext_resource path="res://assets/smoke_bomb.svg" type="Texture" id=2]
+[ext_resource path="res://assets/smoke_explosion.png" type="Texture" id=3]
+[ext_resource path="res://assets/blue_block.png" type="Texture" id=4]
+[ext_resource path="res://assets/4_angles.svg" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="smoke_bomb" type="Area2D"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 663.289, 411.846 )
+scale = Vector2( 0.687898, 0.694529 )
+script = ExtResource( 1 )
+
+[node name="bomb_sprite" type="Sprite" parent="."]
+position = Vector2( -0.505128, -0.411289 )
+scale = Vector2( 0.210267, 0.206892 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0898554, -0.63641 )
+scale = Vector2( 2.8151, 2.90209 )
+shape = SubResource( 1 )
+
+[node name="expl_sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.788574, -1.02783 )
+scale = Vector2( 0.25147, 0.249779 )
+texture = ExtResource( 3 )
+
+[node name="tween_explode" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3.47534, 55.8628 )
+scale = Vector2( 23.5173, 17.0069 )
+z_index = -5
+texture = ExtResource( 4 )
+
+[node name="center_bomb" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -0.745789, -0.505249 )
+scale = Vector2( 0.0820494, 0.0739227 )
+texture = ExtResource( 5 )
+[connection signal="tween_completed" from="tween_explode" to="." method="_on_Tween_tween_completed"]

@@ -1,0 +1,23 @@
+{	
+
+	"automatic":{
+
+		"agent_only":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"quick_no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"quick_agent_only_session","behaviour_timings":{},"obscuring":{}},
+			],
+	},
+
+	"manual":{
+
+		"test":
+			[
+				{"session":"test","behaviour_timings":{"1":[],"2":[],"3":[],"4":[]},"obscuring":{"1":"","2":"","3":"","4":""}},
+				{"session":"delta","behaviour_timings":{"1":[],"2":[],"3":[],"4":[]},"obscuring":{"1":"","2":"","3":"","4":""}},
+			],
+
+	}
+
+}

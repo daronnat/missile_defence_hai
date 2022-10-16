@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="103.32527mm"
+   height="299.04291mm"
+   viewBox="0 0 366.11317 1059.6009"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="enemy_missile.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.2953125"
+     inkscape:cx="-832.364"
+     inkscape:cy="1141.2386"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1855"
+     inkscape:window-height="1025"
+     inkscape:window-x="65"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-202.57095,-5.8900452)">
+    <path
+       sodipodi:type="star"
+       style="fill:#ff0000;stroke:#000000;stroke-width:11.78772259;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3364"
+       sodipodi:sides="5"
+       sodipodi:cx="372.1123"
+       sodipodi:cy="72.362206"
+       sodipodi:r1="220.8795"
+       sodipodi:r2="178.69527"
+       sodipodi:arg1="0.94152453"
+       sodipodi:arg2="1.5698431"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 502.1123,250.93363 242.45299,251.18116 161.97845,4.3069684 371.90175,-148.5172 582.11603,3.9064654 Z"
+       inkscape:transform-center-x="-0.054890798"
+       inkscape:transform-center-y="15.768711"
+       transform="matrix(-0.84358865,0,0,-0.74981133,699.48055,948.66854)" />
+    <ellipse
+       style="fill:#ff0000;stroke:#000000;stroke-width:9.375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3349"
+       cx="-385.6257"
+       cy="-175.57755"
+       rx="117.14286"
+       ry="165"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:9.375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3340"
+       width="227.14285"
+       height="578.57141"
+       x="-499.19711"
+       y="-784.86328"
+       transform="scale(-1)" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#040000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:9.375;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path821"
+       sodipodi:sides="3"
+       sodipodi:cx="379.36841"
+       sodipodi:cy="518.10376"
+       sodipodi:r1="127.32099"
+       sodipodi:r2="63.660492"
+       sodipodi:arg1="1.4114447"
+       sodipodi:arg2="2.4586422"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 399.57146,643.81164 329.98607,558.27891 260.40066,472.74617 369.26688,455.24982 478.1331,437.75346 438.85228,540.78255 Z"
+       inkscape:transform-center-x="9.8826985"
+       inkscape:transform-center-y="-21.550629"
+       transform="matrix(-0.7822932,-0.13468974,0.14010134,-0.81372436,609.06732,1005.4108)" />
+  </g>
+</svg>

@@ -1,0 +1,260 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/green_polygon.svg" type="Texture" id=2]
+[ext_resource path="res://assets/red_triangle.svg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.513726, 0, 0, 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="back_panel" type="Panel" parent="."]
+margin_left = 258.886
+margin_top = 95.546
+margin_right = 1663.89
+margin_bottom = 996.546
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sa1_threat_shape" type="Control" parent="back_panel"]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="back_panel/sa1_threat_shape"]
+margin_left = 338.408
+margin_top = 478.549
+margin_right = 2790.41
+margin_bottom = 1357.55
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will mark targets as either:
+- THREAT (with a red triangle)
+or
+- NON-THREAT (with a green pentagon) 
+
+The agent will only target missiles that it categorises as \"THREATS\"."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="back_panel/sa1_threat_shape"]
+position = Vector2( 1260.83, 273.536 )
+scale = Vector2( 0.276464, 0.276464 )
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="back_panel/sa1_threat_shape/Sprite"]
+margin_left = -364.802
+margin_top = 384.229
+margin_right = 120.198
+margin_bottom = 502.229
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.345098, 0.756863, 0, 1 )
+text = "NON-THREAT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="back_panel/sa1_threat_shape"]
+position = Vector2( 644.952, 282.012 )
+scale = Vector2( 0.434201, 0.434201 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="back_panel/sa1_threat_shape/Sprite2"]
+margin_left = -141.142
+margin_top = 207.887
+margin_right = 161.858
+margin_bottom = 328.887
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "THREAT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sa1_prio_number" type="Control" parent="back_panel"]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="back_panel/sa1_prio_number"]
+margin_left = 335.505
+margin_top = 525.122
+margin_right = 2787.51
+margin_bottom = 1095.12
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display numbers next to missiles corresponding to the order in which the agent is going to aim at them."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Panel" parent="back_panel/sa1_prio_number"]
+margin_left = 488.537
+margin_top = 203.495
+margin_right = 660.537
+margin_bottom = 349.495
+custom_styles/panel = SubResource( 2 )
+
+[node name="nb" type="Label" parent="back_panel/sa1_prio_number/1"]
+margin_left = 29.4949
+margin_top = -33.2715
+margin_right = 85.4949
+margin_bottom = 63.7285
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Panel" parent="back_panel/sa1_prio_number"]
+margin_left = 864.612
+margin_top = 288.899
+margin_right = 1036.61
+margin_bottom = 434.899
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nb" type="Label" parent="back_panel/sa1_prio_number/2"]
+margin_left = 24.5153
+margin_top = -31.434
+margin_right = 80.5153
+margin_bottom = 65.566
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "2"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Panel" parent="back_panel/sa1_prio_number"]
+margin_left = 1254.17
+margin_top = 157.048
+margin_right = 1426.17
+margin_bottom = 303.048
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nb" type="Label" parent="back_panel/sa1_prio_number/3"]
+margin_left = 24.5153
+margin_top = -31.434
+margin_right = 80.5153
+margin_bottom = 65.566
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sa2_threat_prio" type="Control" parent="back_panel"]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="back_panel/sa2_threat_prio"]
+margin_left = 340.0
+margin_top = 558.085
+margin_right = 2792.0
+margin_bottom = 1128.08
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display shapes over missiles categorised as threats (up to 3). The size and opacity of the shapes will determine how dangerous the missile is (the more opacity and the bigger the shape, the more dangerous it is)."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="back_panel/sa2_threat_prio"]
+margin_left = 539.513
+margin_top = 331.795
+margin_right = 739.513
+margin_bottom = 531.795
+rect_rotation = -45.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="back_panel/sa2_threat_prio"]
+self_modulate = Color( 1, 1, 1, 0.752941 )
+margin_left = 889.555
+margin_top = 337.878
+margin_right = 1037.56
+margin_bottom = 485.878
+rect_rotation = -45.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="back_panel/sa2_threat_prio"]
+self_modulate = Color( 1, 1, 1, 0.521569 )
+margin_left = 1158.47
+margin_top = 343.204
+margin_right = 1274.47
+margin_bottom = 459.204
+rect_rotation = -45.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

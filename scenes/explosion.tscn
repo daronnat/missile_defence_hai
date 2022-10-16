@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/explosion.gd" type="Script" id=1]
+[ext_resource path="res://assets/intercept_expl.svg" type="Texture" id=2]
+[ext_resource path="res://audio/explosion.ogg" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="explosion" type="Area2D"]
+position = Vector2( 610.406, 382.943 )
+z_index = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.193152, 0.188921 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.358489, -4.76837e-07 )
+shape = SubResource( 1 )
+
+[node name="effect" type="Tween" parent="."]
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+[connection signal="tween_completed" from="effect" to="." method="_on_effect_tween_completed"]

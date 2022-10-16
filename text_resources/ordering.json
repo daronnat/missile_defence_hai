@@ -1,0 +1,93 @@
+{	
+
+	"automatic":{
+
+		"sa1_threat_shape":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa1_threat_shape","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa1_threat_shape","behaviour_timings":{},"obscuring":{}},
+			],
+
+		"sa1_prio_number":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa1_prio_number","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa1_prio_number","behaviour_timings":{},"obscuring":{}},
+			],
+
+		"sa2_threat_prio":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa2_threat_prio","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa2_threat_prio","behaviour_timings":{},"obscuring":{}},
+			],
+
+		"sa2_missile_path":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa2_missile_path","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa2_missile_path","behaviour_timings":{},"obscuring":{}},
+			],
+
+		"sa3_agent_plan":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa3_agent_plan","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa3_agent_plan","behaviour_timings":{},"obscuring":{}},
+			],
+
+		"sa3_graph":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_agent_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"no_aiming_sa3_graph","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_only_session","behaviour_timings":{},"obscuring":{}},
+				{"session":"agent_sa3_graph","behaviour_timings":{},"obscuring":{}},
+			],
+	},
+
+	"manual_group_agent":{
+		"group1":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"incorrect_mental_model","behaviour_timings":{},"obscuring":{}},
+			],
+		"group2":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"correct_mental_model","behaviour_timings":{},"obscuring":{}},
+			],
+		"group3":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"ignore_mental_model","behaviour_timings":{},"obscuring":{}},
+			],
+		"group4":
+			[
+				{"session":"tutorial","behaviour_timings":{},"obscuring":{}},
+				{"session":"develop_mental_model","behaviour_timings":{},"obscuring":{}},
+			],
+	},
+
+	"manual":{
+
+		"test":
+			[
+				{"session":"test","behaviour_timings":{"1":[],"2":[],"3":[],"4":[]},"obscuring":{"1":"","2":"","3":"","4":""}},
+				{"session":"delta","behaviour_timings":{"1":[],"2":[],"3":[],"4":[]},"obscuring":{"1":"","2":"","3":"","4":""}},
+			],
+
+	}
+
+}

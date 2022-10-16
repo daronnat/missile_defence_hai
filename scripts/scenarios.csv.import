@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+valid=false
+
+[deps]
+
+source_file="res://scripts/scenarios.csv"
+source_md5="243b5c2de7a4608842cfe2e074c88614"
+
+[params]
+
+compress=true
+delimiter=0

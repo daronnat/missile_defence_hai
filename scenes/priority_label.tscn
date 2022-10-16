@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=1]
+
+[node name="priority_label" type="Label"]
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.909804, 0.960784, 0, 1 )
+text = "null"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,14 @@
+# add advise on how to set up the file here <-
+# !!! TEST FILE !!!,,,,,
+#,,,,,
+1,150,105,right_spawn_2,Testobot1,random,29
+3,150,90,mid_spawn_1
+6,150,60,mid_spawn_2
+9,150,55,left_spawn_2,Testobot2,systematic,29
+27,150,105,right_spawn_2
+3,150,90,mid_spawn_1
+6,150,60,mid_spawn_2,Testobot3,systematic,72
+9,150,55,left_spawn_2
+27,150,105,right_spawn_2
+end_round
+27,150,105,right_spawn_2,Testobot4,systematic,72

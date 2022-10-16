@@ -1,0 +1,8 @@
+# folder where logs are stored
+LOGS/
+
+# .import folder, optional as everything can be reimported automatically
+.import/
+
+# old stuff folder
+.old/

@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/Background_08.ogv-8dec25d73d5b0c82c2c6e13fb5845bed.ogvstr"
+
+[deps]
+
+source_file="res://assets/Background_08.ogv"
+dest_files=[ "res://.import/Background_08.ogv-8dec25d73d5b0c82c2c6e13fb5845bed.ogvstr" ]
+
+[params]
+
+loop=true

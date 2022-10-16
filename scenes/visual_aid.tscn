@@ -1,0 +1,336 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/visual_aid.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/joystix_monospace.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/bounding_box.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="Node2D" type="Node2D"]
+z_index = 4096
+script = ExtResource( 1 )
+
+[node name="bounding_box" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="priority_label" type="Label" parent="."]
+visible = false
+margin_left = 24.6942
+margin_top = 29.184
+margin_right = 208.694
+margin_bottom = 126.184
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.745098, 0.717647, 0, 1 )
+text = "null"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_enabler" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.192157 )
+margin_left = 1666.53
+margin_top = 134.394
+margin_right = 1915.53
+margin_bottom = 198.394
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_panel" type="CheckBox" parent="panel_enabler"]
+margin_left = -9.88916
+margin_top = -5.07295
+margin_right = 15.1108
+margin_bottom = 18.927
+rect_scale = Vector2( 3, 3 )
+focus_mode = 0
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header2" type="Label" parent="panel_enabler"]
+margin_left = 54.6362
+margin_top = 11.2508
+margin_right = 1397.64
+margin_bottom = 304.251
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 3 )
+text = "<- HIDE/SHOW
+CONTROL PANEL"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="control_panel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.509804 )
+margin_left = 1678.76
+margin_top = 195.579
+margin_right = 2146.76
+margin_bottom = 1151.58
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="control_panel"]
+margin_left = 34.7439
+margin_top = 6.36431
+margin_right = 1321.75
+margin_bottom = 151.364
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 3 )
+text = "CONTROL PANEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boxes" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+visible = false
+margin_left = 2.93262
+margin_top = 103.238
+margin_right = 26.9326
+margin_bottom = 127.238
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/boxes"]
+margin_left = 25.0959
+margin_top = 6.32918
+margin_right = 503.096
+margin_bottom = 122.329
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Bounding box"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="threat" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+visible = false
+margin_left = 2.93286
+margin_top = 234.27
+margin_right = 26.9329
+margin_bottom = 258.27
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/threat"]
+margin_left = 24.0364
+margin_top = 7.60052
+margin_right = 680.036
+margin_bottom = 123.601
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Threat assessment"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_infos" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 36.5288
+margin_top = 273.721
+margin_right = 60.5288
+margin_bottom = 297.721
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/text_infos"]
+margin_left = 24.0364
+margin_top = 6.62128
+margin_right = 478.036
+margin_bottom = 122.621
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Priorities info"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="path" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 34.0203
+margin_top = 558.492
+margin_right = 58.0203
+margin_bottom = 582.492
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/path"]
+margin_left = 24.5039
+margin_top = 7.0
+margin_right = 488.504
+margin_bottom = 104.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Missile paths"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prio_square" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 35.6962
+margin_top = 475.383
+margin_right = 59.6962
+margin_bottom = 499.383
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/prio_square"]
+margin_left = 25.0
+margin_top = 6.0
+margin_right = 489.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Prio squares"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="threat_shape" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 38.2104
+margin_top = 178.833
+margin_right = 62.2104
+margin_bottom = 202.833
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/threat_shape"]
+margin_left = 25.0
+margin_top = 5.49609
+margin_right = 550.0
+margin_bottom = 102.496
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Threat shapes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="paths" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 34.8583
+margin_top = 763.454
+margin_right = 58.8583
+margin_bottom = 787.454
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/paths"]
+margin_left = 25.0
+margin_top = 5.0
+margin_right = 318.0
+margin_bottom = 102.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Plan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="graph" type="CheckBox" parent="control_panel" groups=[
+"visual_aid_checkbox",
+]]
+margin_left = 34.0205
+margin_top = 853.337
+margin_right = 58.0205
+margin_bottom = 877.337
+rect_scale = Vector2( 5, 5 )
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="control_panel/graph"]
+margin_left = 25.0
+margin_top = 5.49609
+margin_right = 550.0
+margin_bottom = 102.496
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Graph"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA1" type="Label" parent="control_panel"]
+margin_left = 167.0
+margin_top = 68.0
+margin_right = 318.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 2 )
+text = "SA1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA2" type="Label" parent="control_panel"]
+margin_left = 179.144
+margin_top = 379.556
+margin_right = 327.144
+margin_bottom = 476.556
+custom_fonts/font = ExtResource( 2 )
+text = "SA2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA3" type="Label" parent="control_panel"]
+margin_left = 169.276
+margin_top = 668.369
+margin_right = 338.276
+margin_bottom = 773.369
+custom_fonts/font = ExtResource( 2 )
+text = "SA3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="panel_enabler/show_panel" to="." method="_on_show_panel_toggled"]
+[connection signal="pressed" from="control_panel/boxes" to="." method="_on_boxes_pressed"]
+[connection signal="toggled" from="control_panel/boxes" to="." method="_on_boxes_toggled"]
+[connection signal="toggled" from="control_panel/threat" to="." method="_on_threat_toggled"]
+[connection signal="toggled" from="control_panel/text_infos" to="." method="_on_text_infos_toggled"]
+[connection signal="toggled" from="control_panel/path" to="." method="_on_path_toggled"]
+[connection signal="toggled" from="control_panel/prio_square" to="." method="_on_prio_square_toggled"]
+[connection signal="toggled" from="control_panel/threat_shape" to="." method="_on_threat_shape_toggled"]
+[connection signal="toggled" from="control_panel/paths" to="." method="_on_paths_toggled"]
+[connection signal="toggled" from="control_panel/graph" to="." method="_on_graph_toggled"]

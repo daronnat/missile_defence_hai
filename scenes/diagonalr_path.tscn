@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/missile_behaviour.gd" type="Script" id=1]
+[ext_resource path="res://scenes/missile.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.156128, -2.76439, 0, 0, 0, 0, 290.964, 722.315, 0, 0, 0, 0, 718.528, 244.377 )
+}
+_sections_unfolded = [ "Resource" ]
+
+[node name="Path2D" type="Path2D"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="follow" type="PathFollow2D" parent="." index="0"]
+
+position = Vector2( -0.156128, -2.76439 )
+rotation = 1.189
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="missile" parent="follow" index="0" instance=ExtResource( 2 )]
+
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
+
+

@@ -1,0 +1,5 @@
+adam,low bias,bias = 30
+brian,low variance,sigma = 29 (70% accuracy)
+colin,high bias, bias = 60
+david,high variance,sigma = 52 (30% accuracy)
+edward,no bias

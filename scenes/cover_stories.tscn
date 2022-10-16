@@ -1,0 +1,385 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/joystix_monospace.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/cover_stories.gd" type="Script" id=3]
+[ext_resource path="res://assets/demo_sa1_threat_assess.png" type="Texture" id=4]
+[ext_resource path="res://assets/demo_sa1_ordering_numbers.png" type="Texture" id=5]
+[ext_resource path="res://assets/demo_sa2_threat_square.png" type="Texture" id=6]
+[ext_resource path="res://assets/demo_sa2_missile_path.png" type="Texture" id=7]
+[ext_resource path="res://assets/demo_sa3_agent_plan.png" type="Texture" id=8]
+[ext_resource path="res://assets/new_demo_sa3_graph.png" type="Texture" id=9]
+[ext_resource path="res://assets/demo_updated_agent_path.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 100
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="cover_stories" type="Node2D"]
+z_index = 4001
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = -2.0
+margin_right = 1915.0
+margin_bottom = 1078.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instruction" type="Label" parent="Panel"]
+margin_left = 226.582
+margin_top = 63.9485
+margin_right = 5275.58
+margin_bottom = 220.949
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "> Please read the following text carefully:"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="verification" type="Label" parent="Panel"]
+margin_left = 270.433
+margin_top = 908.24
+margin_right = 4131.43
+margin_bottom = 1065.24
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "I have read and understood the text above ->"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="story" type="Label" parent="Panel"]
+margin_left = 244.0
+margin_top = 164.0
+margin_right = 3260.0
+margin_bottom = 1636.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Loading..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+pause_mode = 2
+margin_left = 953.471
+margin_top = 989.238
+margin_right = 1473.47
+margin_bottom = 1140.24
+rect_scale = Vector2( 0.4, 0.4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+pause_mode = 2
+margin_left = 1588.08
+margin_top = 880.093
+margin_right = 1612.08
+margin_bottom = 904.093
+rect_scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visual_explanations" type="Control" parent="Panel"]
+margin_left = 156.0
+margin_top = 138.0
+margin_right = 1873.0
+margin_bottom = 884.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sa1_threat_shape" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa1_threat_shape"]
+margin_left = 260.398
+margin_top = 297.776
+margin_right = 2712.4
+margin_bottom = 964.776
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will mark targets as either:
+- THREAT (with a red triangle)
+or
+- NON-THREAT (with a green pentagon) 
+
+The agent will only target missiles that it categorises as \"THREATS\"."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa1_threat_shape"]
+position = Vector2( 1755.07, 440.313 )
+texture = ExtResource( 4 )
+
+[node name="sa1_prio_number" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa1_prio_number"]
+margin_left = 265.003
+margin_top = 252.092
+margin_right = 2717.01
+margin_bottom = 822.09
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display numbers next to missiles.
+The numbers correspond to the order in which the agent is going to aim at the missiles (the agent will first aim at 1, then 2, then 3 and so on...)."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa1_prio_number"]
+position = Vector2( 1736.73, 388.876 )
+texture = ExtResource( 5 )
+
+[node name="sa2_threat_prio" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa2_threat_prio"]
+margin_left = 236.51
+margin_top = 255.02
+margin_right = 2652.51
+margin_bottom = 825.02
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display shapes over missiles categorised as threats (up to 5).
+The size and opacity of the shapes will determine how dangerous the missile is (the more opacity and the bigger the shape, the more dangerous it is, according to the agent)."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa2_threat_prio"]
+position = Vector2( 1726.35, 451.23 )
+texture = ExtResource( 6 )
+
+[node name="sa2_missile_path" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa2_missile_path"]
+margin_left = 254.47
+margin_top = 257.265
+margin_right = 2670.47
+margin_bottom = 827.265
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display the predicted path of missiles appearing on screen via yellow rays."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa2_missile_path"]
+position = Vector2( 1766.75, 457.964 )
+texture = ExtResource( 7 )
+
+[node name="sa3_agent_plan" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa3_agent_plan"]
+margin_left = 222.881
+margin_top = 245.0
+margin_right = 2209.88
+margin_bottom = 1102.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display an advised path to targets that the agent believe are threats.
+
+The opacity of the path will change depending on whether the agent or the participant is controlling the crosshair."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa3_agent_plan"]
+visible = false
+position = Vector2( 1634.3, 428.78 )
+scale = Vector2( 0.852881, 0.899104 )
+texture = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="Panel/visual_explanations/sa3_agent_plan/Sprite"]
+margin_left = 69.0
+margin_top = -283.0
+margin_right = 429.0
+margin_bottom = 287.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="Panel/visual_explanations/sa3_agent_plan"]
+position = Vector2( 1610.99, 439.375 )
+scale = Vector2( 0.852881, 0.899104 )
+texture = ExtResource( 10 )
+
+[node name="sa3_graph" type="Control" parent="Panel/visual_explanations" groups=[
+"visualisation_description",
+]]
+visible = false
+margin_left = -258.886
+margin_top = -95.546
+margin_right = -218.886
+margin_bottom = -55.546
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Label" parent="Panel/visual_explanations/sa3_graph"]
+margin_left = 268.472
+margin_top = 147.948
+margin_right = 2684.48
+margin_bottom = 1544.95
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "In the following sessions, the agent will display information about overall task performance. Here is a description of the elements present on the screen-capture from left to right:
+
+(1) THREAT HIT ACCURACY: the performance ratio of shots fired and THREATENING  missiles destroyed (missiles that are aimed toward a city).
+
+(2) ARROWS: indicate the current performance trend (green when going up and red when going down).
+
+(3) RED CROSSES / CHECK MARKS: display the status of previous shots (on this example, the 3 last shots were successful)."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Label" parent="Panel/visual_explanations/sa3_graph"]
+margin_left = 1493.41
+margin_top = 461.805
+margin_right = 1574.41
+margin_bottom = 576.805
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.996078, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Label" parent="Panel/visual_explanations/sa3_graph"]
+margin_left = 1493.89
+margin_top = 535.743
+margin_right = 1574.89
+margin_bottom = 650.743
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.996078, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "2"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Label" parent="Panel/visual_explanations/sa3_graph"]
+margin_left = 1791.71
+margin_top = 583.558
+margin_right = 1872.71
+margin_bottom = 698.558
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.996078, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel/visual_explanations/sa3_graph"]
+position = Vector2( 1735.33, 442.25 )
+texture = ExtResource( 9 )
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="Panel/CheckBox" to="." method="_on_CheckBox_toggled"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/obscuring_area.gd" type="Script" id=1]
+[ext_resource path="res://fonts/joystix_monospace.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id=2]
+resource_name = "blink"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.235294 ) ]
+}
+
+[node name="obscured_area" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="despawn_tween" type="Tween" parent="."]
+
+[node name="fade_in_tween" type="Tween" parent="."]
+
+[node name="modulate" type="Tween" parent="."]
+
+[node name="large_warning" type="Panel" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.235294 )
+margin_top = 366.0
+margin_right = 1921.0
+margin_bottom = 448.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="warning_label" type="Label" parent="large_warning"]
+margin_right = 3829.0
+margin_bottom = 145.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+text = "test"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="large_warning"]
+playback_speed = 1.5
+anims/blink = SubResource( 2 )
+[connection signal="tween_completed" from="despawn_tween" to="." method="_on_despawn_tween_tween_completed"]
+[connection signal="animation_finished" from="large_warning/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

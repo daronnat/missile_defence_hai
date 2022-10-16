@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/white_faded_dots.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+highp float rand(vec2 co)
+{
+    highp float a = 12.9898;
+    highp float b = 78.233;
+    highp float c = 43758.5453;
+    highp float dt= dot(co.xy ,vec2(a,b));
+    highp float sn= mod(dt,3.14);
+    return float(sin(sn) * c);
+}
+
+void vertex() {
+  // Animate Sprite moving in big circle around its location
+//	int test = (rand() % (max- min)) + min;
+	VERTEX += vec2(cos(TIME)*15.0, sin(TIME)*15.0);
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="fog_shader" type="Sprite"]
+material = SubResource( 2 )
+position = Vector2( 267.712, 415.392 )
+z_index = 999
+texture = ExtResource( 1 )

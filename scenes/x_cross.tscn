@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="x_cross" type="Node2D"]
+
+[node name="x_cross" type="Line2D" parent="."]
+position = Vector2( 48.6084, 17.3848 )
+points = PoolVector2Array( -36.4012, -40.2864, -77.1084, 21.6152, -18.1084, -67.3848 )
+width = 15.0
+default_color = Color( 0.615686, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="x_cross2" type="Line2D" parent="."]
+position = Vector2( 46.8155, 16.8848 )
+points = PoolVector2Array( -71.8155, -65.3848, -13.3155, 21.1152 )
+width = 15.0
+default_color = Color( 0.615686, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true

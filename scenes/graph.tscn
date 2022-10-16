@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/graph.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.901961, 0.901961, 0.901961, 1 )
+
+[node name="graph_scene" type="Node2D"]
+z_index = 999
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.196078 )
+margin_left = 1628.59
+margin_top = 958.686
+margin_right = 1918.59
+margin_bottom = 1080.69
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="Node2D" parent="Panel"]
+position = Vector2( 2.88891, 116.799 )
+
+[node name="y_value" type="Label" parent="Panel"]
+margin_left = 137.865
+margin_top = -5.75677
+margin_right = 292.865
+margin_bottom = 91.2432
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 4
+text = "9.99"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="metric_name" type="Label" parent="Panel"]
+margin_left = 3.33569
+margin_top = -2.66345
+margin_right = 326.336
+margin_bottom = 94.3365
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Precision"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xy_lines" type="Line2D" parent="Panel"]
+position = Vector2( -11.7177, -10.7129 )
+scale = Vector2( 0.369378, 0.31211 )
+points = PoolVector2Array( 30.8845, 28.2246, 30.8845, 417.417, 808.042, 417.417 )
+width = 7.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2

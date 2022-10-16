@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=2]
+[ext_resource path="res://fonts/joystix_monospace.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/smiling_emoji.png" type="Texture" id=4]
+[ext_resource path="res://assets/angry_emoji.png" type="Texture" id=5]
+[ext_resource path="res://scenes/end_round_question.tscn" type="PackedScene" id=6]
+
+[node name="end_round_question" type="Panel"]
+editor/display_folded = true
+visible = false
+margin_left = 50.0
+margin_top = 70.0
+margin_right = 1260.0
+margin_bottom = 650.0
+
+[node name="question" type="Label" parent="."]
+margin_left = 410.0
+margin_top = 198.0
+margin_right = 1336.0
+margin_bottom = 343.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "How useful was the agent?"
+align = 1
+valign = 1
+
+[node name="shapley_slider" type="HSlider" parent="."]
+margin_left = 121.0
+margin_top = 290.0
+margin_right = 607.0
+margin_bottom = 336.0
+rect_scale = Vector2( 2, 2 )
+max_value = 10.0
+value = 5.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+
+[node name="grades" type="Label" parent="."]
+visible = false
+margin_left = 135.0
+margin_top = 353.0
+margin_right = 2964.0
+margin_bottom = 450.0
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+text = "0%        10%        20%        30%       40%       50%       60%       70%      80%       90%      100%"
+
+[node name="next_round" type="Button" parent="."]
+margin_left = 490.0
+margin_top = 490.0
+margin_right = 1590.0
+margin_bottom = 685.0
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 2 )
+text = "Next Round"
+
+[node name="round_over" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 4820.0
+margin_bottom = 451.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.65625, 0, 1 )
+text = "End of the round!
+Answer this question to progress to the next one"
+autowrap = true
+
+[node name="emoji1" type="Sprite" parent="."]
+position = Vector2( 1140.6, 330.244 )
+scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 4 )
+
+[node name="grades4" type="Label" parent="."]
+margin_left = 1037.0
+margin_top = 376.0
+margin_right = 1445.0
+margin_bottom = 473.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.192902, 0.503906, 0, 1 )
+text = "AWESOME"
+align = 1
+
+[node name="grades5" type="Label" parent="."]
+margin_left = -4.0
+margin_top = 379.0
+margin_right = 404.0
+margin_bottom = 476.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.824219, 0.0386353, 0, 1 )
+text = "TERRIBLE"
+align = 1
+
+[node name="emoji2" type="Sprite" parent="."]
+position = Vector2( 65.9431, 335.841 )
+scale = Vector2( 0.155292, 0.155292 )
+texture = ExtResource( 5 )
+
+[node name="one_p_end_round_question" type="Panel" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+visible = false
+margin_top = -10.0
+margin_right = 1200.0
+margin_bottom = 610.0

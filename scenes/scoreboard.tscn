@@ -1,0 +1,201 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/scoreboard.gd" type="Script" id=1]
+[ext_resource path="res://fonts/arcade.tres" type="DynamicFont" id=2]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=3]
+
+[node name="scoreboard" type="Panel"]
+margin_left = 251.622
+margin_top = 109.152
+margin_right = 1702.62
+margin_bottom = 737.152
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 578.715
+margin_top = 22.123
+margin_right = 888.715
+margin_bottom = 142.123
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.539062, 0, 1 )
+text = "SCORE"
+align = 1
+valign = 1
+
+[node name="missile_score" type="Label" parent="."]
+visible = false
+margin_left = 1310.43
+margin_top = 152.147
+margin_right = 1612.43
+margin_bottom = 272.147
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "+????"
+valign = 1
+
+[node name="missile_cnt" type="Label" parent="."]
+visible = false
+margin_left = 957.792
+margin_top = 153.929
+margin_right = 1267.79
+margin_bottom = 273.929
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "??/??"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="missile_label" type="Label" parent="."]
+visible = false
+margin_left = 219.885
+margin_top = 155.225
+margin_right = 1150.89
+margin_bottom = 275.225
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "Missile Destroyed:"
+align = 2
+valign = 1
+
+[node name="threat_missile_cnt" type="Label" parent="."]
+margin_left = 1024.0
+margin_top = 233.214
+margin_right = 1334.0
+margin_bottom = 353.214
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "??/??"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="threat_missile_label" type="Label" parent="."]
+margin_left = 261.263
+margin_top = 188.888
+margin_right = 1242.26
+margin_bottom = 431.888
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "City-threatening
+Missile Destroyed:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="city_cnt" type="Label" parent="."]
+margin_left = 1024.0
+margin_top = 400.0
+margin_right = 1148.0
+margin_bottom = 520.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "??"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="city_score" type="Label" parent="."]
+visible = false
+margin_left = 1309.58
+margin_top = 254.867
+margin_right = 1605.58
+margin_bottom = 374.867
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "-????"
+valign = 1
+
+[node name="city_label" type="Label" parent="."]
+margin_left = 649.088
+margin_top = 400.0
+margin_right = 1072.09
+margin_bottom = 520.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "City hit:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shot_label" type="Label" parent="."]
+visible = false
+margin_left = 468.0
+margin_top = 359.0
+margin_right = 1043.0
+margin_bottom = 479.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "Shot Fired:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shot_cnt" type="Label" parent="."]
+visible = false
+margin_left = 960.0
+margin_top = 353.0
+margin_right = 1084.0
+margin_bottom = 473.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+text = "??"
+valign = 1
+
+[node name="total_score" type="Label" parent="."]
+visible = false
+margin_left = 960.902
+margin_top = 453.908
+margin_right = 1208.9
+margin_bottom = 573.908
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "????"
+valign = 1
+
+[node name="total_label" type="Label" parent="."]
+visible = false
+margin_left = 377.342
+margin_top = 453.84
+margin_right = 1083.34
+margin_bottom = 573.84
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.16748, 0.765625, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "TOTAL SCORE:"
+align = 2
+valign = 1
+
+[node name="scoreboard_button" type="Button" parent="."]
+margin_left = 642.55
+margin_top = 541.789
+margin_right = 1119.55
+margin_bottom = 686.789
+rect_scale = Vector2( 0.4, 0.4 )
+theme = ExtResource( 3 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_board" type="Tween" parent="."]
+[connection signal="pressed" from="scoreboard_button" to="." method="_on_scoreboard_button_pressed"]

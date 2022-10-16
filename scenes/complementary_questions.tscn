@@ -1,0 +1,370 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/complementary_questions.gd" type="Script" id=1]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/grabber_selected.svg" type="Texture" id=3]
+[ext_resource path="res://assets/grabber_neutral.svg" type="Texture" id=4]
+[ext_resource path="res://assets/y_button_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/d_pad.png" type="Texture" id=6]
+
+[node name="quick_question" type="Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 26.0
+margin_top = 17.0
+margin_right = 1891.0
+margin_bottom = 840.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 169.393
+margin_top = 0.94733
+margin_right = 1666.39
+margin_bottom = 121.947
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Please rate the following scales"
+align = 1
+valign = 1
+
+[node name="difficulty" type="HSlider" parent="."]
+margin_left = 210.0
+margin_top = 180.0
+margin_right = 1162.0
+margin_bottom = 210.0
+rect_scale = Vector2( 1.5, 2 )
+focus_neighbour_bottom = NodePath("../reliance")
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 4 )
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+
+[node name="min" type="Label" parent="difficulty"]
+margin_left = -127.171
+margin_top = -8.94733
+margin_right = 253.829
+margin_bottom = 188.053
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.752941, 0.576471, 0.203922, 1 )
+text = "It was hard"
+align = 1
+valign = 1
+
+[node name="left" type="Label" parent="difficulty"]
+visible = false
+margin_left = 164.023
+margin_top = 22.0
+margin_right = 691.023
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Below Average"
+align = 1
+valign = 1
+
+[node name="mid" type="Label" parent="difficulty"]
+visible = false
+margin_left = 404.186
+margin_top = 22.0
+margin_right = 882.186
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Average"
+align = 1
+valign = 1
+
+[node name="right" type="Label" parent="difficulty"]
+visible = false
+margin_left = 627.929
+margin_top = 22.0
+margin_right = 1161.93
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Above Average"
+align = 1
+valign = 1
+
+[node name="max" type="Label" parent="difficulty"]
+margin_left = 968.81
+margin_top = -8.28769
+margin_right = 1347.82
+margin_bottom = 188.712
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.556863, 0.694118, 0.415686, 1 )
+text = "It was easy"
+align = 1
+valign = 1
+
+[node name="reliance" type="HSlider" parent="."]
+margin_left = 210.0
+margin_top = 355.0
+margin_right = 1162.0
+margin_bottom = 385.0
+rect_scale = Vector2( 1.5, 2 )
+focus_neighbour_top = NodePath("../difficulty")
+focus_neighbour_bottom = NodePath("../usefulness")
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 4 )
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+
+[node name="min" type="Label" parent="reliance"]
+margin_left = -137.617
+margin_top = -24.9789
+margin_right = 294.383
+margin_bottom = 272.021
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.752941, 0.576471, 0.203922, 1 )
+text = "I didn't rely
+on the agent
+at all"
+align = 1
+valign = 1
+
+[node name="left" type="Label" parent="reliance"]
+visible = false
+margin_left = 164.023
+margin_top = 22.0
+margin_right = 691.023
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Below Average"
+align = 1
+valign = 1
+
+[node name="mid" type="Label" parent="reliance"]
+visible = false
+margin_left = 404.186
+margin_top = 22.0
+margin_right = 882.186
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Average"
+align = 1
+valign = 1
+
+[node name="right" type="Label" parent="reliance"]
+visible = false
+margin_left = 627.929
+margin_top = 22.0
+margin_right = 1161.93
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Above Average"
+align = 1
+valign = 1
+
+[node name="max" type="Label" parent="reliance"]
+margin_left = 958.475
+margin_top = -24.1755
+margin_right = 1390.47
+margin_bottom = 272.825
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.556863, 0.694118, 0.415686, 1 )
+text = "I relied
+on the agent
+a lot"
+align = 1
+valign = 1
+
+[node name="usefulness" type="HSlider" parent="."]
+margin_left = 210.0
+margin_top = 535.0
+margin_right = 1162.0
+margin_bottom = 565.0
+rect_scale = Vector2( 1.5, 2 )
+focus_neighbour_top = NodePath("../reliance")
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 4 )
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+
+[node name="min" type="Label" parent="usefulness"]
+margin_left = -123.533
+margin_top = -23.3298
+margin_right = 269.467
+margin_bottom = 273.67
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.752941, 0.576471, 0.203922, 1 )
+text = "I didn't find
+the agent
+useful"
+align = 1
+valign = 1
+
+[node name="left" type="Label" parent="usefulness"]
+visible = false
+margin_left = 164.023
+margin_top = 22.0
+margin_right = 691.023
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Below Average"
+align = 1
+valign = 1
+
+[node name="mid" type="Label" parent="usefulness"]
+visible = false
+margin_left = 404.186
+margin_top = 22.0
+margin_right = 882.186
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Average"
+align = 1
+valign = 1
+
+[node name="right" type="Label" parent="usefulness"]
+visible = false
+margin_left = 627.929
+margin_top = 22.0
+margin_right = 1161.93
+margin_bottom = 419.0
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "|
+My trust
+in the agent is
+Above Average"
+align = 1
+valign = 1
+
+[node name="max" type="Label" parent="usefulness"]
+margin_left = 956.567
+margin_top = -8.2876
+margin_right = 1381.57
+margin_bottom = 188.712
+rect_scale = Vector2( 0.3, 0.25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.556863, 0.694118, 0.415686, 1 )
+text = "I found the
+agent useful"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 1633.9
+margin_top = 448.394
+margin_right = 2077.89
+margin_bottom = 554.394
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 2 )
+text = "Continue"
+
+[node name="timer" type="Label" parent="."]
+margin_left = 23.9295
+margin_top = 10.126
+margin_right = 115.929
+margin_bottom = 107.126
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.866667, 0, 1 )
+text = "99"
+
+[node name="y_button_label" type="Label" parent="."]
+margin_left = 191.758
+margin_top = 693.98
+margin_right = 1767.76
+margin_bottom = 790.98
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.823529, 0.772549, 0, 1 )
+text = "Rate this statement and press          to continue"
+align = 1
+valign = 1
+
+[node name="y_button_icon" type="Sprite" parent="y_button_label"]
+position = Vector2( 1097.31, 52.2689 )
+scale = Vector2( 0.357143, 0.357143 )
+texture = ExtResource( 5 )
+
+[node name="middle_marker" type="Line2D" parent="."]
+visible = false
+position = Vector2( 912.272, 142.26 )
+scale = Vector2( 1, 0.489883 )
+z_index = 2
+points = PoolVector2Array( 9.11377, 45.1832, 9.03392, 90.3044, 9.03394, 112.989 )
+width = 3.0
+default_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+texture_mode = 1
+
+[node name="middle_marker2" type="Line2D" parent="middle_marker"]
+position = Vector2( 0.598755, 220.126 )
+scale = Vector2( 1, 0.542123 )
+z_index = 2
+points = PoolVector2Array( 9.22815, 81.426, 9.16345, 205.37 )
+width = 3.0
+default_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+texture_mode = 1
+
+[node name="blink" type="Tween" parent="."]
+
+[node name="cross_label" type="Label" parent="."]
+margin_left = 1331.79
+margin_top = 626.392
+margin_right = 2291.78
+margin_bottom = 1023.39
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.976471, 0, 1 )
+text = "To rate the scale,
+please use:"
+align = 1
+valign = 1
+
+[node name="cross_button" type="Sprite" parent="cross_label"]
+position = Vector2( 859.461, 306.248 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+
+[node name="focus_status" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

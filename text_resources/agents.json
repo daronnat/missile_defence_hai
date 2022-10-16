@@ -1,0 +1,54 @@
+{
+
+"perfect_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Perfect Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0,"false_positive_rate":0.5}
+},
+
+"virtual_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Virtual Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+"aiming_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Virtual Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+"visual_agent":{
+	"targeting":false,"bias_type":"random","displayed_name":"Visual Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+"aiming_visual_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Virtual Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+
+"tutorial_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Tutorial-o-bot","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+"test_agent":{
+	"targeting":true,"bias_type":"random","displayed_name":"Test Agent","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":true,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":1}
+},
+
+"agent_a":{
+	"targeting":true,"bias_type":"random","displayed_name":"Agent A","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":false,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0.5}
+},
+
+"agent_b":{
+	"targeting":true,"bias_type":"random","displayed_name":"Agent B","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":false,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":0}
+},
+
+"agent_c":{
+	"targeting":true,"bias_type":"random","displayed_name":"Agent C","bias_intensity_info":{"default":0},"behaviour":{},
+	"repair":{},"visible_help_status":false,"target_non_threat":false,"missile_awareness":{"activated":true,"error_rate":0.3,"false_positive_rate":1}
+}
+
+}

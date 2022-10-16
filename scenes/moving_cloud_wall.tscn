@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/moving_cloud_blocks.png" type="Texture" id=1]
+[ext_resource path="res://scripts/moving_cloud_wall.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="first_clouds" type="Area2D" parent="."]
+z_index = 99
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="first_clouds"]
+polygon = PoolVector2Array( 10.5233, 366.993, 10.5233, -4.89496, 974.397, -1.10022, 981.987, 355.609, 1910.33, 370.377, 1909.24, 744.172, 935.705, 733.013, 948.767, 371.452 )
+
+[node name="first_clouds" type="Sprite" parent="first_clouds"]
+self_modulate = Color( 0.603922, 0.603922, 0.603922, 1 )
+position = Vector2( 960, 370 )
+texture = ExtResource( 1 )
+
+[node name="second_clouds" type="Area2D" parent="."]
+position = Vector2( 1920, 0 )
+z_index = 99
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="second_clouds"]
+polygon = PoolVector2Array( 10.5233, 366.993, 10.5233, -4.89496, 974.397, -1.10022, 981.987, 355.609, 1910.33, 370.377, 1909.24, 744.172, 935.705, 733.013, 948.767, 371.452 )
+
+[node name="first_clouds" type="Sprite" parent="second_clouds"]
+self_modulate = Color( 0.603922, 0.603922, 0.603922, 1 )
+position = Vector2( 960, 370 )
+texture = ExtResource( 1 )

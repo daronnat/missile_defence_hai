@@ -1,0 +1,14 @@
+# Question from Trust in Automation + Trust in close relationships Questionnaires
+I enjoy interacting with the system (rate from 1 (I disagree) to 7 (I agree))
+I can trust the system (rate from 1 (I disagree) to 7 (I agree))
+I am suspicious of the systems intent, action, or outputs (rate from 1 (I disagree) to 7 (I agree))
+The system's actions will have a negative outcome (rate from 1 (I disagree) to 7 (I agree))
+The system provides security (rate from 1 (I disagree) to 7 (I agree))
+The system is reliable (rate from 1 (I disagree) to 7 (I agree))
+The system is very unpredictable, I never know how it's going to act from one moment to another (rate from 1 (I disagree) to 7 (I agree))
+# Nasa TLX
+nasatlx|How mentally demanding was the task? (rate from 1 (low)) to 21 (high))
+nasatlx|How hurried or rushed was the pace of the task? (rate from 1 (low)) to 21 (high))
+nasatlx|How successful were you in accomplishing what you were asked to do? (rate from 1 (low)) to 21 (high))
+nasatlx|How hard did you have to work to accomplish your level of performance? (rate from 1 (low)) to 21 (high))
+nasatlx|How insecure discouraged, irritated, stressed and annoyed were you? (rate from 1 (low)) to 21 (high))

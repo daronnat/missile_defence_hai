@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/explosion_particle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/city_explosion.gd" type="Script" id=2]
+[ext_resource path="res://assets/explosion_spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/intercept_expl.svg" type="Texture" id=4]
+[ext_resource path="res://audio/explosion_2.wav" type="AudioStream" id=5]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 10.0
+flag_disable_z = true
+spread = 50.0
+gravity = Vector3( 0, -50, 0 )
+initial_velocity = 25.0
+initial_velocity_random = 1.0
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+linear_accel = 50.0
+linear_accel_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+scale = 0.5
+
+[sub_resource type="Animation" id=2]
+resource_name = "expl_stage"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[node name="city_explosion" type="Particles2D"]
+self_modulate = Color( 1, 1, 1, 0.359098 )
+position = Vector2( -0.365273, 0.108684 )
+amount = 60
+lifetime = 0.5
+fixed_fps = 24
+local_coords = false
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 5
+frame = 18
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/expl_stage = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -0.283294, 0.402356 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )

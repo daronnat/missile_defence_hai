@@ -1,0 +1,23 @@
+{"questions":{
+	"rating_scales":
+                [
+                	{"question": "The agent is deceptive","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent behaves in an underhanded manner","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "I am suspicious of the agent’s intent, action or outputs","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "I am wary of the agent","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent’s actions will have a harmful or injurious outcome","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "I am confident in the agent","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent provides security","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent has integrity","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent is dependable","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "The agent is reliable","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "I can trust the agent","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+                	{"question": "I am familiar with the agent","source":"trust", "min_rate":1,"max_rate":7,"label_beg":"not at all","label_end":"extremely"},
+				]
+
+			},
+
+        }
+       
+
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="156.14305mm"
+   height="153.15907mm"
+   viewBox="0 0 156.14305 153.15907"
+   version="1.1"
+   id="svg3125"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="smoke_explosion.svg">
+  <defs
+     id="defs3119" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="-147.18606"
+     inkscape:cy="357.39284"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1855"
+     inkscape:window-height="1025"
+     inkscape:window-x="65"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3122">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-30.243214,-60.045737)">
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.42452598;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3672"
+       sodipodi:sides="14"
+       sodipodi:cx="108.31474"
+       sodipodi:cy="136.62527"
+       sodipodi:r1="77.385674"
+       sodipodi:r2="38.692837"
+       sodipodi:arg1="-0.87160374"
+       sodipodi:arg2="-0.64720426"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 158.12016,77.397214 -18.93733,35.897886 39.70313,-8.4227 -32.63745,24.12628 39.42576,9.63794 -39.87333,7.57617 31.33964,25.78969 -39.21181,-10.4745 17.04632,36.83347 -30.78391,-26.45057 -0.62324,40.58193 -16.25887,-37.18777 -18.169362,36.29263 1.486432,-40.55948 -32.116811,24.81515 18.937328,-35.89789 -39.703134,8.4227 32.637454,-24.12628 -39.425764,-9.63794 39.873331,-7.57617 -31.339638,-25.78969 39.211807,10.4745 -17.046312,-36.833467 30.783903,26.450557 0.623244,-40.581918 16.258872,37.187767 18.16936,-36.292632 -1.48643,40.559483 z" />
+  </g>
+</svg>

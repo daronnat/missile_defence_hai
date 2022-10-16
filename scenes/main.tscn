@@ -1,0 +1,1362 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/tile1.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/dark_blue_background.png" type="Texture" id=3]
+[ext_resource path="res://scenes/tower_gun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/vertical_bar.svg" type="Texture" id=5]
+[ext_resource path="res://scenes/city.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/crosshair.tscn" type="PackedScene" id=7]
+[ext_resource path="res://themes/gui_button.tres" type="Theme" id=9]
+[ext_resource path="res://fonts/joystix_monospace.tres" type="DynamicFont" id=10]
+[ext_resource path="res://fonts/arcade.tres" type="DynamicFont" id=11]
+[ext_resource path="res://fonts/lato_normal.tres" type="DynamicFont" id=12]
+[ext_resource path="res://audio/drum.wav" type="AudioStream" id=17]
+[ext_resource path="res://audio/siren.wav" type="AudioStream" id=18]
+[ext_resource path="res://fonts/gomarice.tres" type="DynamicFont" id=20]
+[ext_resource path="res://scripts/consent_form.gd" type="Script" id=21]
+[ext_resource path="res://scripts/logging.gd" type="Script" id=22]
+[ext_resource path="res://assets/user_icon_pixelart.png" type="Texture" id=23]
+[ext_resource path="res://scripts/player_mechanics.gd" type="Script" id=24]
+[ext_resource path="res://assets/white_light.png" type="Texture" id=25]
+[ext_resource path="res://assets/robot_icon_pixelart.png" type="Texture" id=26]
+[ext_resource path="res://scripts/agent_mechanics.gd" type="Script" id=27]
+[ext_resource path="res://assets/cloud2.png" type="Texture" id=28]
+[ext_resource path="res://assets/cloud1.png" type="Texture" id=29]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id=3]
+length = 90.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 90 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2049.31, 106.008 ), Vector2( -132.596, 110.496 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 120.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 120.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2040.77, 177.932 ), Vector2( -99.0187, 161.892 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 10.1425
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0, 2 )
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 50, 50 )
+format = 1
+tile_data = PoolIntArray( 1245184, 2, 0, 1245185, 2, 0, 1245186, 2, 0, 1245187, 2, 0, 1245188, 2, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 2, 0, 1245193, 2, 0, 1245194, 2, 0, 1245195, 2, 0, 1245196, 2, 0, 1245197, 2, 0, 1245198, 2, 0, 1245199, 2, 0, 1245200, 2, 0, 1245201, 2, 0, 1245202, 2, 0, 1245203, 2, 0, 1245204, 2, 0, 1245205, 2, 0, 1245206, 2, 0, 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1245211, 2, 0, 1245212, 2, 0, 1245213, 2, 0, 1245214, 2, 0, 1245215, 2, 0, 1245216, 2, 0, 1245217, 2, 0, 1245218, 2, 0, 1245219, 2, 0, 1245220, 2, 0, 1245221, 2, 0, 1245222, 2, 0, 1310720, 2, 0, 1310721, 2, 0, 1310722, 2, 0, 1310723, 2, 0, 1310724, 2, 0, 1310725, 2, 0, 1310726, 2, 0, 1310727, 2, 0, 1310728, 2, 0, 1310729, 2, 0, 1310730, 2, 0, 1310731, 2, 0, 1310732, 2, 0, 1310733, 2, 0, 1310734, 2, 0, 1310735, 2, 0, 1310736, 2, 0, 1310737, 2, 0, 1310738, 2, 0, 1310739, 2, 0, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1310747, 2, 0, 1310748, 2, 0, 1310749, 2, 0, 1310750, 2, 0, 1310751, 2, 0, 1310752, 2, 0, 1310753, 2, 0, 1310754, 2, 0, 1310755, 2, 0, 1310756, 2, 0, 1310757, 2, 0, 1310758, 2, 0, 1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0, 1376259, 2, 0, 1376260, 2, 0, 1376261, 2, 0, 1376262, 2, 0, 1376263, 2, 0, 1376264, 2, 0, 1376265, 2, 0, 1376266, 2, 0, 1376267, 2, 0, 1376268, 2, 0, 1376269, 2, 0, 1376270, 2, 0, 1376271, 2, 0, 1376272, 2, 0, 1376273, 2, 0, 1376274, 2, 0, 1376275, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0, 1376283, 2, 0, 1376284, 2, 0, 1376285, 2, 0, 1376286, 2, 0, 1376287, 2, 0, 1376288, 2, 0, 1376289, 2, 0, 1376290, 2, 0, 1376291, 2, 0, 1376292, 2, 0, 1376293, 2, 0, 1376294, 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 959.666, 539.564 )
+scale = Vector2( 1.00018, 1.00056 )
+z_index = -2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tower_gun" parent="." instance=ExtResource( 4 )]
+position = Vector2( 960, 863.482 )
+
+[node name="tower_base" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 960.221, 910.511 )
+scale = Vector2( 1.72823, 1.46376 )
+z_as_relative = false
+texture = ExtResource( 5 )
+
+[node name="city1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 270, 920 )
+
+[node name="city2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 690, 920 )
+
+[node name="city3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1240, 920 )
+
+[node name="city4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1650, 920 )
+
+[node name="crosshair" parent="." instance=ExtResource( 7 )]
+position = Vector2( 960, 540 )
+
+[node name="left_spawn_1" type="Position2D" parent="."]
+position = Vector2( 154, 57 )
+
+[node name="left_spawn_2" type="Position2D" parent="."]
+position = Vector2( 474, 57 )
+
+[node name="mid_spawn_1" type="Position2D" parent="."]
+position = Vector2( 794, 57 )
+
+[node name="mid_spawn_2" type="Position2D" parent="."]
+position = Vector2( 1114, 57 )
+
+[node name="right_spawn_1" type="Position2D" parent="."]
+position = Vector2( 1434, 57 )
+
+[node name="right_spawn_group1" type="Position2D" parent="."]
+position = Vector2( 1440, 96 )
+
+[node name="right_spawn_group2" type="Position2D" parent="."]
+position = Vector2( 1640, 96 )
+
+[node name="right_spawn_group3" type="Position2D" parent="."]
+position = Vector2( 1840, 96 )
+
+[node name="right_spawn_2" type="Position2D" parent="."]
+position = Vector2( 1754, 57 )
+
+[node name="left_spawn_group1" type="Position2D" parent="."]
+position = Vector2( 80, 96 )
+
+[node name="left_spawn_group2" type="Position2D" parent="."]
+position = Vector2( 280, 96 )
+
+[node name="left_spawn_group3" type="Position2D" parent="."]
+position = Vector2( 480, 96 )
+
+[node name="non_threat_left1" type="Position2D" parent="."]
+position = Vector2( -30.2915, 794.532 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="non_threat_left2" type="Position2D" parent="."]
+position = Vector2( 481.71, 967.646 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="non_threat_right1" type="Position2D" parent="."]
+position = Vector2( 1951.94, 789.051 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="non_threat_right2" type="Position2D" parent="."]
+position = Vector2( 1445.27, 964.651 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="ammo_label" type="Label" parent="."]
+margin_left = 987.159
+margin_top = 909.0
+margin_right = 1267.16
+margin_bottom = 1064.0
+rect_scale = Vector2( 0.25, 0.25 )
+theme = ExtResource( 9 )
+custom_styles/normal = SubResource( 1 )
+text = "??"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upper_information" type="Node2D" parent="."]
+z_index = 3999
+
+[node name="round_counter" type="Label" parent="upper_information"]
+margin_left = 16.691
+margin_top = 11.521
+margin_right = 1006.69
+margin_bottom = 156.521
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Round: n/n"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wave_counter" type="Label" parent="upper_information"]
+margin_left = 215.812
+margin_top = 11.521
+margin_right = 1106.81
+margin_bottom = 156.521
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Wave: n/n"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="session_counter" type="Label" parent="upper_information"]
+margin_left = 700.0
+margin_top = 11.521
+margin_right = 2878.0
+margin_bottom = 156.521
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "SESSION(S) COMPLETED: n/n"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Label" parent="upper_information"]
+margin_left = 1712.73
+margin_top = 9.0
+margin_right = 2405.73
+margin_bottom = 154.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Time: N"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="beggame_msg" type="Label" parent="."]
+visible = false
+margin_left = 742.879
+margin_top = 374.972
+margin_right = 1732.88
+margin_bottom = 519.972
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 10 )
+text = "Get Ready!"
+
+[node name="show_msg" type="Tween" parent="beggame_msg"]
+
+[node name="gameover_msg" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 580.0
+margin_top = 221.0
+margin_right = 665.0
+margin_bottom = 238.0
+text = "GAME OVER"
+
+[node name="endgame" type="Panel" parent="."]
+visible = false
+margin_left = 285.272
+margin_top = 206.272
+margin_right = 1671.27
+margin_bottom = 625.272
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endgame_header" type="Label" parent="endgame"]
+margin_left = 250.347
+margin_top = 13.9207
+margin_right = 1366.35
+margin_bottom = 133.921
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.917969, 0.559387, 0, 1 )
+text = "END OF THE SESSION"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="go_main_menu" type="Button" parent="endgame"]
+margin_left = 563.155
+margin_top = 363.613
+margin_right = 1454.16
+margin_bottom = 508.613
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 9 )
+text = "NEXT"
+
+[node name="endgame_text" type="Label" parent="endgame"]
+visible = false
+margin_left = 58.4468
+margin_top = 134.251
+margin_right = 4414.45
+margin_bottom = 575.251
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 10 )
+text = "Please click on the button below to continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endgame_final" type="Label" parent="endgame"]
+visible = false
+margin_left = 132.069
+margin_top = 126.7
+margin_right = 3894.07
+margin_bottom = 567.7
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 10 )
+text = "Thank you for playing!
+
+You completed the study,
+ please notify the lead researcher"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endgame_final_online" type="Label" parent="endgame"]
+visible = false
+margin_left = 380.725
+margin_top = 49.7866
+margin_right = 3667.72
+margin_bottom = 1082.79
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 10 )
+text = "Thank you for playing!
+
+You are almost done, please complete the small form available at the following link:"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkButton" type="LinkButton" parent="endgame/endgame_final_online"]
+anchor_left = 0.5
+anchor_top = 1.277
+anchor_right = 0.5
+anchor_bottom = 1.277
+margin_left = -468.345
+margin_top = -393.609
+margin_right = -19.3447
+margin_bottom = -296.609
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0, 0.709804, 1, 1 )
+toggle_mode = true
+action_mode = 0
+text = "> CLICK HERE <"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="endgame/endgame_final_online"]
+margin_left = -1760.51
+margin_top = 1199.77
+margin_right = 1543.49
+margin_bottom = 1342.77
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 12 )
+text = "www.google.fr"
+align = 1
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="session_counter" type="Label" parent="."]
+visible = false
+margin_left = 2.0
+margin_right = 992.0
+margin_bottom = 145.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Session: n"
+
+[node name="id_display" type="Label" parent="."]
+visible = false
+margin_left = 20.416
+margin_top = 9.0
+margin_right = 1010.42
+margin_bottom = 154.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "ID: ?"
+
+[node name="drum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="siren" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="post_session_break" type="Panel" parent="."]
+visible = false
+margin_left = 413.0
+margin_top = 257.0
+margin_right = 867.0
+margin_bottom = 428.0
+
+[node name="next_session_button" type="Button" parent="post_session_break"]
+margin_left = 165.0
+margin_top = 87.0
+margin_right = 260.0
+margin_bottom = 107.0
+text = "Next Session"
+
+[node name="Label" type="Label" parent="post_session_break"]
+margin_left = 59.0
+margin_top = 33.0
+margin_right = 378.0
+margin_bottom = 47.0
+text = "Take a break! Once you're rested, push the button"
+
+[node name="main_menu" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0.285156, 0.285156, 0.285156, 0.933686 )
+margin_left = -0.527946
+margin_top = -6.60321
+margin_right = 1918.47
+margin_bottom = 1068.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="session_a" type="Button" parent="main_menu"]
+visible = false
+margin_left = 759.807
+margin_top = 540.093
+margin_right = 2541.81
+margin_bottom = 685.093
+rect_scale = Vector2( 0.2, 0.2 )
+focus_neighbour_left = NodePath("../tutorial")
+focus_neighbour_right = NodePath("../delta")
+focus_neighbour_bottom = NodePath("../beta")
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "Session A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="session_b" type="Button" parent="main_menu"]
+visible = false
+margin_left = 763.679
+margin_top = 641.085
+margin_right = 2545.68
+margin_bottom = 786.085
+rect_scale = Vector2( 0.2, 0.2 )
+focus_neighbour_left = NodePath("../tutorial")
+focus_neighbour_right = NodePath("../delta")
+focus_neighbour_bottom = NodePath("../beta")
+theme = ExtResource( 9 )
+text = "Session B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="custom_session" type="Button" parent="main_menu"]
+visible = false
+margin_left = 780.63
+margin_top = 346.554
+margin_right = 2562.63
+margin_bottom = 491.554
+rect_scale = Vector2( 0.2, 0.2 )
+focus_neighbour_left = NodePath("../tutorial")
+focus_neighbour_right = NodePath("../delta")
+focus_neighbour_bottom = NodePath("../beta")
+theme = ExtResource( 9 )
+text = "CUSTOM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="Button" parent="main_menu"]
+visible = false
+margin_left = 411.64
+margin_top = 494.373
+margin_right = 1500.65
+margin_bottom = 639.373
+rect_scale = Vector2( 0.2, 0.2 )
+focus_neighbour_top = NodePath("../no_agent")
+focus_neighbour_right = NodePath("../alpha")
+theme = ExtResource( 9 )
+text = "tutorial"
+
+[node name="auto_test" type="Button" parent="main_menu"]
+visible = false
+margin_left = 853.323
+margin_top = 1015.24
+margin_right = 979.323
+margin_bottom = 1044.24
+text = "AUTOMATED TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="manual_test" type="Button" parent="main_menu"]
+margin_left = 1026.49
+margin_top = 1014.88
+margin_right = 1171.49
+margin_bottom = 1046.88
+text = "MANUAL TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_title" type="Label" parent="main_menu"]
+margin_left = 287.334
+margin_top = 118.751
+margin_right = 1172.33
+margin_bottom = 279.751
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color_shadow = Color( 0.769531, 0.486969, 0, 1 )
+custom_constants/shadow_offset_x = 8
+text = "City Defense"
+
+[node name="agent_status" type="Panel" parent="main_menu"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 740.0
+margin_top = 630.0
+margin_right = 1050.0
+margin_bottom = 800.0
+
+[node name="a_cnt" type="Label" parent="main_menu/agent_status"]
+margin_left = 40.0
+margin_top = 60.0
+margin_right = 832.0
+margin_bottom = 205.0
+rect_scale = Vector2( 0.12, 0.12 )
+custom_fonts/font = ExtResource( 10 )
+text = "A: n"
+
+[node name="b_cnt" type="Label" parent="main_menu/agent_status"]
+margin_left = 190.0
+margin_top = 60.0
+margin_right = 982.0
+margin_bottom = 205.0
+rect_scale = Vector2( 0.12, 0.12 )
+custom_fonts/font = ExtResource( 10 )
+text = "B: n"
+
+[node name="c_cnt" type="Label" parent="main_menu/agent_status"]
+margin_left = 40.0
+margin_top = 100.0
+margin_right = 832.0
+margin_bottom = 245.0
+rect_scale = Vector2( 0.12, 0.12 )
+custom_fonts/font = ExtResource( 10 )
+text = "C: n"
+
+[node name="d_cnt" type="Label" parent="main_menu/agent_status"]
+margin_left = 191.0
+margin_top = 100.0
+margin_right = 983.0
+margin_bottom = 245.0
+rect_scale = Vector2( 0.12, 0.12 )
+custom_fonts/font = ExtResource( 10 )
+text = "D: n"
+
+[node name="e_cnt" type="Label" parent="main_menu/agent_status"]
+margin_left = 120.0
+margin_top = 140.0
+margin_right = 1011.0
+margin_bottom = 285.0
+rect_scale = Vector2( 0.12, 0.12 )
+custom_fonts/font = ExtResource( 10 )
+text = "E: n"
+
+[node name="header" type="Label" parent="main_menu/agent_status"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 1814.0
+margin_bottom = 171.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color_shadow = Color( 0.847656, 0.417206, 0, 1 )
+custom_constants/shadow_offset_x = 8
+text = "Sessions per Agent so far"
+
+[node name="city_test" parent="main_menu" instance=ExtResource( 6 )]
+position = Vector2( 1416.43, 239.27 )
+
+[node name="debug" type="Panel" parent="main_menu"]
+margin_left = 1763.03
+margin_top = 1008.66
+margin_right = 1905.03
+margin_bottom = 1042.66
+
+[node name="Button" type="Button" parent="main_menu/debug"]
+margin_left = 28.0987
+margin_top = 8.64575
+margin_right = 108.099
+margin_bottom = 28.6458
+text = "SHOW ALL"
+
+[node name="custom_list" type="OptionButton" parent="main_menu"]
+margin_left = 736.447
+margin_top = 414.979
+margin_right = 903.447
+margin_bottom = 434.979
+rect_scale = Vector2( 2.5, 2.5 )
+text = "CUSTOM _ SELECTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="manual_selection_panel" type="Panel" parent="main_menu"]
+margin_left = 4.49829
+margin_top = 310.0
+margin_right = 1917.5
+margin_bottom = 1070.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agents" type="Control" parent="main_menu/manual_selection_panel"]
+margin_left = 412.445
+margin_top = 36.4204
+margin_right = 452.445
+margin_bottom = 76.4204
+
+[node name="agent_a" type="CheckBox" parent="main_menu/manual_selection_panel/agents" groups=[
+"checkbox_agents",
+]]
+margin_left = 38.9966
+margin_top = 20.0101
+margin_right = 116.997
+margin_bottom = 44.0101
+rect_scale = Vector2( 3, 3 )
+text = "Agent A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_b" type="CheckBox" parent="main_menu/manual_selection_panel/agents" groups=[
+"checkbox_agents",
+]]
+margin_left = 35.4172
+margin_top = 136.389
+margin_right = 113.417
+margin_bottom = 160.389
+rect_scale = Vector2( 3, 3 )
+text = "Agent B"
+
+[node name="agent_c" type="CheckBox" parent="main_menu/manual_selection_panel/agents" groups=[
+"checkbox_agents",
+]]
+margin_left = 34.4088
+margin_top = 242.157
+margin_right = 112.409
+margin_bottom = 266.157
+rect_scale = Vector2( 3, 3 )
+text = "Agent C"
+
+[node name="groups" type="Control" parent="main_menu/manual_selection_panel"]
+margin_left = 1211.11
+margin_top = 31.7372
+margin_right = 1251.11
+margin_bottom = 71.7372
+
+[node name="group1" type="CheckBox" parent="main_menu/manual_selection_panel/groups" groups=[
+"checkbox_group",
+]]
+margin_left = 34.0
+margin_top = 29.0
+margin_right = 113.0
+margin_bottom = 53.0
+rect_scale = Vector2( 3, 3 )
+text = "Group 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="group2" type="CheckBox" parent="main_menu/manual_selection_panel/groups" groups=[
+"checkbox_group",
+]]
+margin_left = 33.9189
+margin_top = 133.392
+margin_right = 112.919
+margin_bottom = 157.392
+rect_scale = Vector2( 3, 3 )
+text = "Group 2"
+
+[node name="group3" type="CheckBox" parent="main_menu/manual_selection_panel/groups" groups=[
+"checkbox_group",
+]]
+margin_left = 36.4088
+margin_top = 247.655
+margin_right = 115.409
+margin_bottom = 271.655
+rect_scale = Vector2( 3, 3 )
+text = "Group 3"
+
+[node name="group4" type="CheckBox" parent="main_menu/manual_selection_panel/groups" groups=[
+"checkbox_group",
+]]
+margin_left = 36.4133
+margin_top = 357.089
+margin_right = 115.413
+margin_bottom = 381.089
+rect_scale = Vector2( 3, 3 )
+text = "Group 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_ordering_button" type="Button" parent="main_menu/manual_selection_panel"]
+margin_left = 825.0
+margin_top = 477.0
+margin_right = 1600.0
+margin_bottom = 622.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 9 )
+text = "START"
+
+[node name="warning_msg" type="Label" parent="main_menu/manual_selection_panel"]
+visible = false
+margin_left = 720.0
+margin_top = 44.0
+margin_right = 1557.0
+margin_bottom = 709.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.843137, 0, 0, 1 )
+text = "warning_message"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="consent_form" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0, 0.552941, 1, 0.87451 )
+margin_left = -1.0
+margin_top = -6.0
+margin_right = 1925.0
+margin_bottom = 1084.0
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="consent_form"]
+margin_left = 752.906
+margin_top = 67.9855
+margin_right = 1940.91
+margin_bottom = 212.986
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0.554688, 1, 1 )
+custom_constants/shadow_offset_x = 8
+text = "CONSENT FORM"
+
+[node name="content" type="Label" parent="consent_form"]
+margin_left = 266.205
+margin_top = 154.765
+margin_right = 4230.2
+margin_bottom = 1451.77
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 12 )
+text = "All information and data collected during the experiments (in-game logs related to system performance, task performance, reliance on the agents and answers to surveys) will be anonymised and NO personally identifying information will be associated with the data.
+
+The recording of participants hardware information, in-game logs and survey data will be retained and used in future publications. The data obtained from this study will be stored on a secure Strathclyde cloud service. The names of the participants will remain confidential and will not appear in any published documents relating to the research conducted. The University of Strathclyde is registered with the Information Commissioner’s Office who implements the Data Protection Act 1998. All personal data on participants will be processed in accordance with the provisions of the Data Protection Act 1998 and the GDPR regulations. To comply with the GDPR regulations, the participants can request access to their data and/or ask for it to be deleted at any-time."
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accept" type="CheckBox" parent="consent_form"]
+margin_left = 640.484
+margin_top = 640.0
+margin_right = 664.484
+margin_bottom = 664.0
+rect_scale = Vector2( 3, 3 )
+focus_neighbour_right = NodePath("../refuse")
+
+[node name="Label" type="Label" parent="consent_form/accept"]
+margin_left = -17.0
+margin_top = 20.0
+margin_right = 254.0
+margin_bottom = 117.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.320801, 0.5625, 0, 1 )
+text = "I accept"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="refuse" type="CheckBox" parent="consent_form"]
+margin_left = 1105.17
+margin_top = 640.0
+margin_right = 1129.17
+margin_bottom = 664.0
+rect_scale = Vector2( 3, 3 )
+focus_neighbour_left = NodePath("../accept")
+
+[node name="Label" type="Label" parent="consent_form/refuse"]
+margin_left = -13.0
+margin_top = 20.0
+margin_right = 249.0
+margin_bottom = 117.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.492188, 0, 0, 1 )
+text = "I refuse"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="statement" type="Label" parent="consent_form"]
+margin_left = 462.208
+margin_top = 606.589
+margin_right = 3029.21
+margin_bottom = 703.589
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 12 )
+text = "I consent to these terms and accept that my in-game data will be recorded:"
+align = 3
+
+[node name="warning" type="Label" parent="consent_form"]
+visible = false
+margin_left = 574.109
+margin_top = 769.104
+margin_right = 2814.11
+margin_bottom = 866.104
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "If you want to play this game, you must accept these conditions."
+
+[node name="id_panel" type="Panel" parent="consent_form"]
+self_modulate = Color( 0, 0, 0, 0 )
+margin_left = 4.31702
+margin_top = 797.0
+margin_right = 1922.32
+margin_bottom = 1068.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="id_statement" type="Label" parent="consent_form/id_panel"]
+margin_left = 269.898
+margin_top = -4.948
+margin_right = 2908.9
+margin_bottom = 192.052
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.890196, 0.752941, 0, 1 )
+text = "If you wish to continue, please enter your Prolific ID below and press \"NEXT\"
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="participant_id" type="LineEdit" parent="consent_form/id_panel"]
+margin_left = 400.0
+margin_top = 61.0
+margin_right = 3573.0
+margin_bottom = 274.0
+rect_scale = Vector2( 0.35, 0.35 )
+focus_neighbour_left = NodePath("../../logging_panel/CheckButton")
+focus_neighbour_top = NodePath("../../accept")
+focus_neighbour_bottom = NodePath("../next_button")
+custom_fonts/font = ExtResource( 12 )
+align = 1
+placeholder_text = "ENTER ID HERE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p" type="Label" parent="consent_form/id_panel"]
+visible = false
+margin_left = 804.012
+margin_top = 121.697
+margin_right = 853.012
+margin_bottom = 218.697
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/font = ExtResource( 12 )
+text = "P"
+
+[node name="next_button" type="Button" parent="consent_form/id_panel"]
+margin_left = 836.817
+margin_top = 195.142
+margin_right = 1326.82
+margin_bottom = 334.144
+rect_scale = Vector2( 0.35, 0.35 )
+focus_neighbour_left = NodePath("../../logging_panel/CheckButton")
+focus_neighbour_top = NodePath("../participant_id")
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 12 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pls_wait" type="Label" parent="consent_form/id_panel/next_button"]
+margin_left = 521.743
+margin_top = 46.4141
+margin_right = 1907.74
+margin_bottom = 191.414
+rect_scale = Vector2( 0.5, 0.5 )
+text = "please wait..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logging_panel" type="Panel" parent="consent_form"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 28.8419
+margin_top = 48.273
+margin_right = 266.84
+margin_bottom = 161.272
+script = ExtResource( 22 )
+
+[node name="label" type="Label" parent="consent_form/logging_panel"]
+margin_left = 15.2002
+margin_top = 0.313721
+margin_right = 1144.2
+margin_bottom = 161.314
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 20 )
+text = "LOGGING SYSTEM"
+align = 1
+
+[node name="CheckButton" type="CheckButton" parent="consent_form/logging_panel"]
+margin_left = 48.8585
+margin_top = 32.9769
+margin_right = 124.858
+margin_bottom = 72.9769
+rect_scale = Vector2( 2, 2 )
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="consent_form/logging_panel"]
+
+[node name="autoplay_panel" type="Panel" parent="consent_form"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 35.1886
+margin_top = 159.34
+margin_right = 273.187
+margin_bottom = 272.339
+
+[node name="label" type="Label" parent="consent_form/autoplay_panel"]
+margin_left = 15.2002
+margin_top = 0.313721
+margin_right = 1144.2
+margin_bottom = 161.314
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 20 )
+text = "AUTOPLAY"
+align = 1
+
+[node name="CheckButton" type="CheckButton" parent="consent_form/autoplay_panel"]
+margin_left = 48.8585
+margin_top = 32.9769
+margin_right = 124.858
+margin_bottom = 72.9769
+rect_scale = Vector2( 2, 2 )
+
+[node name="loading" type="Label" parent="consent_form"]
+visible = false
+margin_left = 724.662
+margin_top = 498.692
+margin_right = 1228.66
+margin_bottom = 618.692
+custom_fonts/font = ExtResource( 11 )
+text = "Loading..."
+
+[node name="ingame_logging_info" type="Node2D" parent="."]
+visible = false
+position = Vector2( 618, 293 )
+z_index = 200
+
+[node name="panel" type="Panel" parent="ingame_logging_info"]
+margin_right = 719.0
+margin_bottom = 285.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="ingame_logging_info/panel"]
+margin_left = 10.0
+margin_top = 32.0
+margin_right = 1413.0
+margin_bottom = 229.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 0.701961, 0, 1 )
+text = "Please wait while your gameplay data
+are being saved..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="Label" parent="ingame_logging_info/panel"]
+margin_left = 117.695
+margin_top = 138.568
+margin_right = 986.695
+margin_bottom = 335.568
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 12 )
+text = "Remaining requests: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_avatar" type="Sprite" parent="."]
+position = Vector2( 67.9361, 1028.7 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 23 )
+script = ExtResource( 24 )
+
+[node name="cable_user" type="Line2D" parent="user_avatar"]
+position = Vector2( 1446.17, 51.6572 )
+points = PoolVector2Array( -1254.44, -11.4131, 664.052, -11.207, 779.55, -211.942 )
+width = 80.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 31
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="user_light" type="Light2D" parent="user_avatar/cable_user"]
+visible = false
+position = Vector2( 589.728, -81.0362 )
+scale = Vector2( 0.0182132, 0.017374 )
+texture = ExtResource( 25 )
+color = Color( 0.0742188, 0.0742188, 0.0742188, 1 )
+energy = 3.0
+
+[node name="name" type="Label" parent="user_avatar"]
+margin_left = 169.0
+margin_top = -155.0
+margin_right = 3346.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "USER_NAME"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_box" type="Panel" parent="user_avatar"]
+visible = false
+margin_left = 277.664
+margin_top = -460.802
+margin_right = 1630.66
+margin_bottom = -158.802
+
+[node name="displayed_text" type="Label" parent="user_avatar/text_box"]
+margin_left = 28.8115
+margin_top = 78.3601
+margin_right = 1327.81
+margin_bottom = 246.36
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ">: ..."
+
+[node name="help_status" type="Node2D" parent="."]
+position = Vector2( 1865.19, 922.873 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="aiming" type="Label" parent="help_status"]
+margin_left = -1878.2
+margin_top = 195.0
+margin_right = -96.1981
+margin_bottom = 340.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "AIMING HELP:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="status" type="Label" parent="help_status/aiming"]
+margin_left = 1483.73
+margin_top = -41.001
+margin_right = 1780.73
+margin_bottom = 103.999
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visual_help" type="Label" parent="help_status"]
+margin_left = -1076.13
+margin_top = 195.0
+margin_right = 111.868
+margin_bottom = 340.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "VISUAL HELP:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="status" type="Label" parent="help_status/visual_help"]
+margin_left = 1193.92
+margin_top = -36.4468
+margin_right = 1490.92
+margin_bottom = 108.553
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_avatar" type="Sprite" parent="."]
+position = Vector2( 1857.64, 1034.25 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 26 )
+script = ExtResource( 27 )
+
+[node name="cable_agent" type="Line2D" parent="agent_avatar"]
+position = Vector2( -4379.32, -1350.95 )
+points = PoolVector2Array( 2139.85, 1176.76, 2243.74, 1377.66, 4167.23, 1379.42 )
+width = 80.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 20
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="name" type="Label" parent="agent_avatar"]
+margin_left = -2100.0
+margin_top = -190.0
+margin_right = 1058.0
+margin_bottom = -45.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "loading_agent..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween_textbox" type="Tween" parent="agent_avatar"]
+
+[node name="tween_aiming" type="Tween" parent="agent_avatar"]
+
+[node name="text_box" type="Polygon2D" parent="agent_avatar"]
+visible = false
+position = Vector2( -722.422, -571.134 )
+color = Color( 0.176471, 0.176471, 0.176471, 1 )
+polygon = PoolVector2Array( -0.0849609, 0.919922, -1385.45, 0.919922, -1385.49, 437.45, -41.8467, 437.45, 220.75, 499.106, -0.081543, 306.576 )
+
+[node name="displayed_text" type="Label" parent="agent_avatar/text_box"]
+margin_left = -1368.2
+margin_top = 17.1694
+margin_right = -20.2036
+margin_bottom = 328.169
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "..."
+autowrap = true
+
+[node name="delay_timer" type="Timer" parent="agent_avatar"]
+
+[node name="agent_offline" type="Line2D" parent="."]
+visible = false
+position = Vector2( 105.341, 492.912 )
+scale = Vector2( 0.4, 0.4 )
+points = PoolVector2Array( 4454, 1203.47, 4281.51, 1430.69 )
+width = 40.0
+default_color = Color( 0.443137, 0.443137, 0.443137, 1 )
+texture_mode = 20
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="name" type="Label" parent="agent_offline"]
+margin_left = 3036.37
+margin_top = 1297.37
+margin_right = 4614.37
+margin_bottom = 1442.37
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Agent offline"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_vanish" type="Tween" parent="."]
+
+[node name="panel_appear" type="Tween" parent="."]
+
+[node name="cloud2" type="Sprite" parent="."]
+position = Vector2( 2049.31, 106.008 )
+scale = Vector2( 0.639474, 0.598922 )
+z_index = -1
+texture = ExtResource( 28 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud2"]
+anims/cloud_moving = SubResource( 3 )
+
+[node name="cloud1" type="Sprite" parent="."]
+position = Vector2( 2040.77, 177.932 )
+scale = Vector2( 0.776619, 0.756311 )
+z_index = -1
+texture = ExtResource( 29 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cloud1"]
+anims/cloud_moving = SubResource( 4 )
+
+[node name="idle_area" type="Area2D" parent="."]
+visible = false
+position = Vector2( 645, 357.5 )
+scale = Vector2( 2.34375, 1.95312 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="idle_area"]
+scale = Vector2( 2.14206, 2.17804 )
+shape = SubResource( 5 )
+
+[node name="reset_crosshair" type="Tween" parent="idle_area"]
+
+[node name="focus_status" type="Control" parent="."]
+margin_top = -2.0
+margin_right = 21.0
+margin_bottom = 11.0
+
+[node name="delay_timer" type="Timer" parent="."]
+
+[node name="h_level" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1915.09, 960.045 )
+
+[node name="Line2D" type="Line2D" parent="h_level"]
+position = Vector2( -3.01465, -9.04407 )
+points = PoolVector2Array( -0.734619, -0.68988, -1815.57, 0.0268555 )
+width = 5.0
+default_color = Color( 0, 0.341176, 0.992157, 1 )
+texture_mode = 31
+
+[node name="wait_panel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 1918.0
+margin_bottom = 1104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="wait_panel"]
+margin_left = 507.222
+margin_top = 403.503
+margin_right = 2300.22
+margin_bottom = 500.503
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 12 )
+text = "Please wait while we are connecting to our servers..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="tween_completed" from="beggame_msg/show_msg" to="." method="_on_show_msg_tween_completed"]
+[connection signal="pressed" from="endgame/go_main_menu" to="." method="_on_go_main_menu_pressed"]
+[connection signal="pressed" from="endgame/endgame_final_online/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="post_session_break/next_session_button" to="." method="_on_next_session_button_pressed"]
+[connection signal="pressed" from="main_menu/session_a" to="." method="_on_gamemode_pressed" binds= [ "session_a" ]]
+[connection signal="pressed" from="main_menu/session_b" to="." method="_on_gamemode_pressed" binds= [ "session_b" ]]
+[connection signal="pressed" from="main_menu/custom_session" to="." method="_on_gamemode_pressed" binds= [ "agent_sa1_threat_shape" ]]
+[connection signal="pressed" from="main_menu/tutorial" to="." method="_on_gamemode_pressed" binds= [ "tutorial" ]]
+[connection signal="pressed" from="main_menu/auto_test" to="." method="_on_gamemode_pressed" binds= [ "automated_test" ]]
+[connection signal="pressed" from="main_menu/manual_test" to="." method="_on_gamemode_pressed" binds= [ "manual_test" ]]
+[connection signal="pressed" from="main_menu/debug/Button" to="." method="_on_Button_pressed"]
+[connection signal="item_selected" from="main_menu/custom_list" to="." method="_on_custom_list_item_selected"]
+[connection signal="toggled" from="main_menu/manual_selection_panel/agents/agent_a" to="." method="_on_agent_toggled" binds= [ "agent_a" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/agents/agent_b" to="." method="_on_agent_toggled" binds= [ "agent_b" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/agents/agent_c" to="." method="_on_agent_toggled" binds= [ "agent_c" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/groups/group1" to="." method="_on_group_toggled" binds= [ "group1" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/groups/group2" to="." method="_on_group_toggled" binds= [ "group2" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/groups/group3" to="." method="_on_group_toggled" binds= [ "group3" ]]
+[connection signal="toggled" from="main_menu/manual_selection_panel/groups/group4" to="." method="_on_group_toggled" binds= [ "group4" ]]
+[connection signal="pressed" from="main_menu/manual_selection_panel/agent_ordering_button" to="." method="_on_agent_ordering_button_pressed"]
+[connection signal="pressed" from="consent_form/accept" to="consent_form" method="_on_accept_pressed"]
+[connection signal="pressed" from="consent_form/refuse" to="consent_form" method="_on_refuse_pressed"]
+[connection signal="text_changed" from="consent_form/id_panel/participant_id" to="consent_form" method="_on_participant_id_text_changed"]
+[connection signal="pressed" from="consent_form/id_panel/next_button" to="consent_form" method="_on_next_button_pressed"]
+[connection signal="request_completed" from="consent_form/logging_panel/HTTPRequest" to="consent_form/logging_panel" method="_on_request_completed"]
+[connection signal="tween_completed" from="agent_avatar/tween_aiming" to="agent_avatar" method="_on_tween_aiming_tween_completed"]
+[connection signal="timeout" from="agent_avatar/delay_timer" to="agent_avatar" method="_on_delay_timer_timeout"]
+[connection signal="timeout" from="delay_timer" to="." method="_on_delay_timer_timeout"]
