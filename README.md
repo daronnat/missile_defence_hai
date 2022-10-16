@@ -9,7 +9,7 @@ All sessions generate logs of players' performance and behaviours in Godot local
 
 Surveys can also be presented to players in-between or during gameplay.
 
-Note: between the first and most recent use of the framework, a lot of things were tweaked/changed. The current state of the framework does not match exactly the ones used in any of the study presented below.
+Note: between the first and last study conducted using this framework, a lot of things were tweaked/changed. The current state of the framework does not match exactly the one used in any of the study presented in the list of publications below.
 
 ## Getting Started
 
