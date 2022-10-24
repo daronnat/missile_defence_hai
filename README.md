@@ -23,7 +23,8 @@ Then run the scene file from the "2D" panel.
 
 ## The output
 
-Screen-capture of the project:
+Preview of what the framework looks like:
+Different kinds of visual occlusions as well as different types of visual tools (infographics, HUDs) can also be added.
 
 ![missile_defense_test](https://user-images.githubusercontent.com/32872858/196039446-bab1dd45-b5d1-43a4-9660-88cea44e79ae.gif)
 
