@@ -1,4 +1,4 @@
-# Single Turring Shooting Human-Agent Collaborative Game
+# Human-Agent Collaborative Game
 Framework used during my PhD in Human-Computer Interaction. The goal is to destroy missiles before they reach cities.
 
 The player can interact with different agents (AIs) designed to help with the aiming process.
@@ -45,4 +45,3 @@ If you cannot access one of these publications / hit a paywall, just send me an 
 ## Authors
 
 * **Sylvain Daronnat** - [Sylvain Daronnat's github](https://github.com/daronnat)
-# missile_defence_hai
